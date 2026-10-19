@@ -24,6 +24,28 @@ send workers the concise shared task brief and their scoped context; do not dump
 whole chat or unrelated project material. Refresh the brief when a user correction,
 source change, or new evidence changes scope or a decision.
 
+For claims about use, customer value, or whether something works, keep the evidence
+source and what it can prove attached to the claim. A code reference or passing unit test
+does not prove a production call or successful user outcome. Separate server requests,
+page views, completed tasks, paid purchases, delivered service, support feedback, and
+retained customers. Record the source, revision or time window, coverage and filters,
+result, and limit. Requests are not page views; page views are not task completion; a
+price and checkout link are not a completed purchase. Treat missing or uncovered data
+as unknown, not zero. Respect a user's factual premise for the requested work. Mark it
+as user-reported when it has not been independently checked; do not present it as
+independently verified. If the result depends on that premise and available evidence
+conflicts, show the conflict and resolve it before dependent action.
+
+When asked to evaluate a repository in a copy, record its branch, base revision, and
+existing dirty state before experimentation. Preserve the source tree. Copy the exact
+state needed for the task; exclude secrets without reading them. Before running a
+service, test, build, or generated script, inspect its configuration and startup path
+to verify that databases, APIs, payment providers, and deployment targets are local or
+explicitly authorized. Check copied remotes and push URLs before any release step. If a
+target is unknown or points to production, do not start it; use an isolated test target
+or report the check as unavailable. A test command may start its own web server or
+services, so inspect the runner configuration as well as the command name.
+
 Treat the user's current and still-applicable standing directions as authority for
 their stated scope. A workflow file does not grant permission. Subagents inherit only
 the actions authorized for their assigned work; delegation cannot authorize another
@@ -94,6 +116,11 @@ For a handoff or interruption, leave a concise record with:
   sources, product decision or check, and remaining disagreement.
 - Any external effect that happened or may still be in flight, plus the condition for
   safe resumption.
+
+For a shared evidence map, include for each claim its source, method, revision or time
+window, coverage, what it establishes, what it cannot establish, confidence, and the
+decision or check it informs. Preserve conflicting evidence rather than averaging it
+away; the lead resolves or reports the conflict.
 
 On handoff, distinguish worker-reported results from checks the receiving lead repeated.
 Do not resend unchanged status or create a separate tracker when the existing task view

@@ -11,9 +11,12 @@ give a worker broader permissions than the user or project granted.
 
 ## 1. Prepare the assignments
 
-1. Break the request into separate user outcomes. For each, name the product or surface,
-   relevant workflow (Build, Fix, Remove, Refactor, Audit, Review, or Investigate),
-   owner, acceptance conditions, and evidence needed.
+1. Break the request into separate user outcomes or independent evidence questions.
+   For each, name the product or surface, relevant workflow (Build, Fix, Remove,
+   Refactor, Audit, Review, or Investigate), owner, acceptance conditions, and evidence
+   needed. When evaluating workflows, split by independent evidence questions or trial
+   tasks, not mechanically by skill-file count; keep shared acceptance criteria and
+   integrate the findings across the same product case.
 2. Start subagents first. Use up to four subagent slots where the platform allows. Use
    other agents only after all four subagent slots are occupied, if independent work
    remains and the platform supports more agents. If the platform provides fewer than

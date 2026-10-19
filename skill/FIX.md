@@ -53,7 +53,12 @@ is incomplete.
 ## Workflow
 
 1. **Define the failure.** Record what should happen, what happens instead, who or what
-   is affected, and a reliable reproduction. Separate observed facts from guesses.
+   is affected, and a reliable reproduction. Separate observed facts from guesses. For
+   claims about external source material, preserve the source and field provenance; a
+   missing field in an API response does not prove the source omitted it. Keep source
+   claims distinct from parser output and estimates. If a fix requires an estimate,
+   identify and validate its inputs and method; do not invent a value when either is
+   missing.
 2. **Trace the path.** Follow the failing request or action through its entry point,
    implementation, dependencies, and callers. Check recent changes, existing tests,
    logs, and similar working behavior before editing.
@@ -72,6 +77,8 @@ is incomplete.
    always show examples and their impact. Fix confirmed repetitions of the same problem
    in the relevant scope; ask before taking on a separate problem outside that scope.
 6. **Check the correction.** Add or update a focused regression check when appropriate.
+   For data fields, cover missing, null, empty, malformed, and valid values where those
+   states can reach the boundary.
    Verify that the original failure is gone and that important neighboring behavior
    still works. Read relevant CI results when available. Do not claim a check passed if
    it was not run.

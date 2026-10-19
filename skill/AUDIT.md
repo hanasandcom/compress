@@ -57,8 +57,11 @@ or time spent alone is not evidence of value. Keep this assessment read-only.
    unknown; a text search alone cannot establish runtime use.
 3. **Check whether it works.** Trace representative calls end to end. Where access
    permits, check recent request counts, last use, success and failure rates, costs, and
-   whether the service responds as its contract promises. State the period, data source,
-   coverage gaps, and whether a zero means no traffic or no measurement. Production
+   whether the service responds as its contract promises. For user-facing pages and
+   features, distinguish requests from page views, successful task completion, purchase,
+   service delivery, support feedback, and customer outcomes. State the source, period,
+   filters, coverage gaps, and whether a zero means no events or no measurement. A
+   request count or visit count alone does not establish usefulness. Production
    monitoring can inform change decisions only when its coverage and signals are clear.
 4. **Assess value and cost.** Connect each surface to a user or operational need. Note
    duplicate behavior, abandoned implementations, broken paths, maintenance burden, and

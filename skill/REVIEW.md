@@ -64,8 +64,13 @@ code or product evidence.
    about the intended behavior, known risks or competing approaches, and suitable
    quality checks. Compare the synthesis with the diff and repository evidence.
 5. **Use evidence.** Confirm concerns with a call path, input, test result, log, or
-   research evidence. Treat style-only preferences as non-blocking unless they violate
-   project guidance.
+   research evidence. For claims that a feature is unused, broken in practice, or has
+   no customer value, name the operational source, time window, coverage, and measure.
+   Separate code reachability, HTTP requests, page views, task completion, checkout
+   success, entitlement or service delivery, and customer outcomes. A rendered price,
+   a link, or a passing unit test does not prove a successful purchase or useful service.
+   Treat missing telemetry as unknown, not zero. Treat style-only preferences as
+   non-blocking unless they violate project guidance.
 6. **Write actionable findings.** Put findings first, ordered by severity. For each,
    give a precise file and line, the condition that triggers it, and its effect. Do not
    report guesses as defects. If there are no findings, say what you inspected and what

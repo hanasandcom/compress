@@ -25,6 +25,12 @@ Before dispatch, give the workers one concise, current brief containing:
 - Available checks, evidence sources, authorized actions, and any decision that must
   wait for the user.
 
+For evidence work, also share one compact evidence map. For each claim, record the
+source and method, revision or time window, coverage and filters, what it establishes,
+what it cannot establish, and the decision or check it informs. Assign distinct evidence
+questions when useful, then integrate conflicts; do not let separate workers turn one
+partial metric each into a whole-product conclusion.
+
 Give each worker the relevant sources and paths, not the entire conversation or a pile
 of unrelated project files. Mark unverified facts as unknown. Update the brief when the
 user redirects the work or evidence changes an interface, dependency, or acceptance

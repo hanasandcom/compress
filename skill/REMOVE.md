@@ -60,9 +60,12 @@ is incomplete.
 2. **Check actual use.** Trace callers, imports, routes, dynamic registrations, flags,
    integrations, docs, and tests. Check production request counts and last-use dates
    over a stated period when available. Confirm whether the endpoint can respond and
-   what its responses do. Static references alone do not prove runtime use; no recorded
-   traffic does not prove non-use if logging is incomplete or external callers are
-   possible. Mark each conclusion as confirmed, disproved, or unknown.
+   what its responses do. Separate a redirect or compatibility alias from a duplicate
+   implementation or a distinct capability. For public interfaces, verify that logs
+   cover external callers before concluding they are unused. Static references alone
+   do not prove runtime use; no recorded traffic does not prove non-use if logging is
+   incomplete or external callers are possible. Mark each conclusion as confirmed,
+   disproved, or unknown, and name the evidence that would resolve an unknown.
 3. **Assess the impact.** Identify affected users, dependent systems, data, migrations,
    and rollback needs. If evidence shows meaningful use or cannot establish whether a
    public interface has external users, show the evidence and risk, then ask whether to

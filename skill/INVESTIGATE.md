@@ -52,15 +52,22 @@ findings within the question's scope and report them without changing files.
    widen it into an audit or implementation plan.
 2. **Find direct evidence.** Inspect relevant code, configuration, history, tests, logs,
    analytics, documentation, and actual runtime behavior where access permits. Trace
-   claims that an API works or nobody uses it. Search finds code references but
-   cannot prove production use or rule out external callers.
+   the full path across repository and service boundaries, including the producer,
+   transformations, API contract, and display or consumer. Test user-provided factual
+   premises against the source records or an authoritative contract; treat them as
+   reported facts until checked. Trace claims that an API works or nobody uses it.
+   Search finds code references but cannot prove production use or rule out external
+   callers. A missing response field does not by itself prove the source lacked the
+   value or that it was withheld.
 3. **Research the question.** Follow [Research](RESEARCH.md) to compare distinct evidence
    that supplies context, tests competing explanations, and qualifies the answer. Connect
    the synthesis to the question's evidence and state when it leaves a decision open.
 4. **Separate evidence from inference.** Label what is confirmed, what is likely, and
-   what remains unknown. For usage claims, give the data source and period; distinguish
-   zero recorded traffic from missing or incomplete telemetry. Do not invent results or
-   turn earlier agent conclusions into facts without checking them.
+   what remains unknown. For use or value claims, name the data source, period,
+   coverage, and filters. Separate requests, page views, completed tasks, purchases,
+   delivered service, and customer outcomes. Distinguish zero recorded events from
+   missing or incomplete telemetry. Do not invent results or turn earlier agent
+   conclusions into facts without checking them.
 5. **Flag problems found.** Always report material bloat, duplicate behavior, broken
    paths, or poor practices that appear in the inspected scope, even when they are not
    needed to answer the main question. Give concrete examples and effects; do not claim

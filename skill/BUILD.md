@@ -94,7 +94,10 @@ is incomplete.
    identity and reuse its colors, type, spacing, assets, and components when they fit.
    Awards and external examples are ideas, not proof of fit or a promise of an award.
 5. **Look for unmet needs.** Prefer direct user research, support feedback, product
-   analytics, and observed behavior when available. Search Reddit, X, forums, or reviews
+   analytics, and observed behavior when available. Separate requests and page views
+   from completed user tasks, successful purchases, delivered service, and customer
+   outcomes; use the measure that matches the promised value. Search Reddit, X, forums,
+   or reviews
    for recurring complaints when that can inform the feature. Treat public posts as
    anecdotal leads, not representative evidence; separate repeated needs from one-off
    opinions and do not add every requested extra. If evidence is unavailable, record
@@ -122,9 +125,13 @@ is incomplete.
    normal line lengths and readable formatting: fewer lines is useful only when it does
    not hide intent or combine unrelated work. Do not optimize for low line count,
    generate speculative extension points, or add unrelated cleanup.
-9. **Test locally.** Verify changed behavior at the relevant user-facing boundary,
-   including important success, empty, error, and edge states. Run the project's focused
-   checks and tests locally; inspect UI, keyboard use, and accessibility where relevant.
+9. **Test locally.** Before running tests, builds, or scripts, inspect their runner and
+   startup configuration for database, API, payment, network, and deployment targets.
+   Use isolated local or test services; do not start a check that may reach production
+   unless that exact access is authorized. Verify changed behavior at the relevant
+   user-facing boundary, including important success, empty, error, and edge states.
+   Run the project's focused checks and tests locally; inspect UI, keyboard use, and
+   accessibility where relevant.
    Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
    drift, and accidental changes. Fix failures before committing. Passing tests alone
    do not prove the feature is useful or usable.

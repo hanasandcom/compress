@@ -57,10 +57,14 @@ is incomplete.
    change, and what should become easier. “Clean up” alone is not a measurable goal.
 2. **Map the behavior and callers.** Trace the relevant entry points, public contracts,
    dependencies, and callers. Record behavior that must stay the same, including error
-   cases and side effects. Search for duplicates before introducing a shared helper.
-3. **Set a baseline.** Run or inspect the focused tests and checks that cover the
-   behavior. Record relevant performance or operational measures if the refactor could
-   affect them. Identify missing coverage before relying on it.
+   cases and side effects. Search for repeated behavior across the relevant scope, not
+   only before introducing a shared helper. Confirm whether apparent duplicates serve
+   different users, contracts, or operational roles.
+3. **Set a baseline.** Record the base revision and existing dirty diff before editing;
+   do not treat pre-existing changes as part of the refactor. Run or inspect focused
+   tests and checks that cover the behavior. Record relevant performance or operational
+   measures if the refactor could affect them. Identify missing coverage before relying
+   on it.
 4. **Research and compare.** Follow [Research](RESEARCH.md) to compare distinct evidence
    about the current structure, candidate designs, and how to measure the result. Check
    findings against actual behavior and project constraints; do not add an abstraction
