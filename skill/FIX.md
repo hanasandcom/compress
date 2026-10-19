@@ -2,6 +2,12 @@
 
 Correct a specific defect with the smallest change that addresses its cause.
 
+Before writing or changing user-facing or maintainer-facing prose, consult the matching
+section of the [wording dictionary](../dictionary/wording.md). Apply its natural
+examples only when they fit the facts; do not mechanically replace words or load all
+164 pairs when one section answers the question. Check the final report and any prose
+you added against the dictionary.
+
 ## Workflow
 
 1. **Define the failure.** Record what should happen, what happens instead, who or what

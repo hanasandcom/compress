@@ -2,6 +2,12 @@
 
 Answer a specific question from available evidence without changing code.
 
+Before writing user-facing or maintainer-facing prose, consult the matching section of
+the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+when they fit the facts; do not mechanically replace words or load all 164 pairs when
+one section answers the question. Check the answer and final report against the
+dictionary.
+
 ## Workflow
 
 1. **Pin down the question.** State the decision the answer should support and the

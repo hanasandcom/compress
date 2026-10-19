@@ -3,6 +3,12 @@
 Use this workflow to add a requested capability or extend an existing one. Build only
 the smallest complete change that serves a real, stated purpose.
 
+Before writing or changing user-facing or maintainer-facing prose, consult the matching
+section of the [wording dictionary](../dictionary/wording.md). Apply its natural
+examples only when they fit the facts; do not mechanically replace words or load all
+164 pairs when one section answers the question. Check the final report and any prose
+you added against the dictionary.
+
 ## Workflow
 
 1. **Name the outcome.** State who needs this, what they are trying to do, and how they
@@ -59,8 +65,8 @@ the smallest complete change that serves a real, stated purpose.
    turning the task into unrelated cleanup. Reuse a dependency or helper when it fits;
    avoid a new dependency, layer, configuration option, fallback, or public API unless
    the outcome requires it.
-7. **Write like a person.** Use the project's voice and the wording pairs in
-   [the wording dictionary](../dictionary/wording.md). Prefer familiar words and direct,
+7. **Write like a person.** Use the project's voice and the wording pairs in the
+   [wording dictionary](../dictionary/wording.md). Prefer familiar words and direct,
    concrete sentences. Do not use the dictionary's generic examples in agent-authored
    prose unless you are quoting them to explain the problem. Remove slogans, filler,
    inflated claims, and repeated points.

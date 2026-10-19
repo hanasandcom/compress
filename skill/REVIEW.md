@@ -3,6 +3,12 @@
 Check whether a proposed change does what it claims, fits the system, and improves the
 codebase without adding avoidable risk. Review the change; do not implement it.
 
+Before writing user-facing or maintainer-facing prose, consult the matching section of
+the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+when they fit the facts; do not mechanically replace words or load all 164 pairs when
+one section answers the question. Check findings and the final report against the
+dictionary.
+
 ## Workflow
 
 1. **Establish intent and scope.** Read the request, diff, linked design or issue, and

@@ -3,6 +3,12 @@
 Retire a capability and the code that exists only to support it, without breaking
 behavior users still rely on.
 
+Before writing or changing user-facing or maintainer-facing prose, consult the matching
+section of the [wording dictionary](../dictionary/wording.md). Apply its natural
+examples only when they fit the facts; do not mechanically replace words or load all
+164 pairs when one section answers the question. Check the final report and any prose
+you added against the dictionary.
+
 ## Workflow
 
 1. **Define the removal.** Name the capability, surfaces, APIs, and users in scope.

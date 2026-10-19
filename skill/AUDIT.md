@@ -3,6 +3,11 @@
 Assess what a system contains, what people use, what works, and what it costs to keep.
 Do not change code during an audit.
 
+Before writing user-facing or maintainer-facing prose, consult the matching section of
+the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+when they fit the facts; do not mechanically replace words or load all 164 pairs when
+one section answers the question. Check the final report against the dictionary.
+
 ## Workflow
 
 1. **Set the boundary.** Name the product areas, APIs, services, or time period in
