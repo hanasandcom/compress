@@ -89,7 +89,9 @@ For a handoff or interruption, leave a concise record with:
 - Repository, branch/worktree, base and candidate revision, owned files, shared
   resources, and user authorization relevant to the next action.
 - Work completed, checks and evidence (method, revision, environment, result), unrun
-  checks, assumptions, and unresolved decisions.
+  checks, assumptions, and unresolved decisions. For research handoffs, include the
+  shared evidence map: each paper's role, distinct contribution, relationship to other
+  sources, product decision or check, and remaining disagreement.
 - Any external effect that happened or may still be in flight, plus the condition for
   safe resumption.
 

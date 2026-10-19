@@ -44,25 +44,13 @@ without changing files. Treat confirmed repetitions of the same underlying probl
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 
-Research is required. In chained work, choose one shared set of N relevant full,
-peer-reviewed papers for the whole task (N must be at least three); carry findings
-between workflows and add papers only for important unanswered questions. Select studies
-to test current assumptions, including findings that challenge the proposed direction.
-When work touches a domain's behavior, data processing, or architecture, compare the
-actual pipeline stage by stage with established designs and recent research: what works,
-what is missing, and what could improve it. Assess candidate methods such as NLP or
-bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
-conclusions to paper methods, scope, limits, and evidence from this product.
-
-Apply research, do not just cite it. For each paper, carry forward its method, scope,
-finding, limitation, and the local question or check it suggests. Keep a concise shared
-note across workflow handoffs instead of repeating source text. Tests show only whether
-covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost. The research set must answer named decisions in this task: do not count papers
-that are only loosely related. The minimum of three applies once across the whole
-task chain, not once per worker or workflow. Track research time and report when the
-cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
-claim the rule improved results until representative outcomes have been compared.
+Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
+uses at least three full, relevant peer-reviewed papers that contribute distinct,
+complementary evidence. Compare how they agree, extend, or challenge one another,
+then connect the synthesis to product evidence and decisions. A paper count or list
+of summaries alone does not meet this requirement. The set is shared across the
+whole task chain, not repeated for each workflow or worker; report when research
+is incomplete.
 
 ## Workflow
 
@@ -80,17 +68,10 @@ claim the rule improved results until representative outcomes have been compared
    public interface has external users, show the evidence and risk, then ask whether to
    proceed or stage a deprecation. Do not silently leave a second API or compatibility
    layer behind.
-4. **Research removal and deprecation.** Read full,
-   relevant, peer-reviewed papers from established scholarly publishers or proceedings
-   (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
-   Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
-   press releases, AI-written summaries, abstracts, and search snippets do not count;
-   vendor documents may confirm vendor-specific facts. Record each paper's method,
-   scope, finding, limitations, and relevance to the removal. Use the research to check
-   impact, migration, and deprecation assumptions against actual project evidence. If
-   fewer than three suitable full papers can be read for the task, report the gap and
-   mark the research incomplete; do not pad the list. The three-paper minimum is a
-   workflow requirement, not a research-established optimum.
+4. **Research removal and deprecation.** Follow [Research](RESEARCH.md) to compare
+   distinct evidence about usage, migration, and deprecation, and use it to test the
+   removal assumptions against product evidence. Include evidence about what replaces
+   the capability when a replacement is part of the plan.
 5. **Remove the whole capability.** Delete its implementation and code used only by it.
    Update routes, configuration, navigation, docs, and tests. Preserve shared helpers
    and behavior that other features still use. Do not add unrelated cleanup.

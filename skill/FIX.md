@@ -42,25 +42,13 @@ without changing files. Treat confirmed repetitions of the same underlying probl
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 
-Research is required. In chained work, choose one shared set of N relevant full,
-peer-reviewed papers for the whole task (N must be at least three); carry findings
-between workflows and add papers only for important unanswered questions. Select studies
-to test current assumptions, including findings that challenge the proposed direction.
-When work touches a domain's behavior, data processing, or architecture, compare the
-actual pipeline stage by stage with established designs and recent research: what works,
-what is missing, and what could improve it. Assess candidate methods such as NLP or
-bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
-conclusions to paper methods, scope, limits, and evidence from this product.
-
-Apply research, do not just cite it. For each paper, carry forward its method, scope,
-finding, limitation, and the local question or check it suggests. Keep a concise shared
-note across workflow handoffs instead of repeating source text. Tests show only whether
-covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost. The research set must answer named decisions in this task: do not count papers
-that are only loosely related. The minimum of three applies once across the whole
-task chain, not once per worker or workflow. Track research time and report when the
-cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
-claim the rule improved results until representative outcomes have been compared.
+Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
+uses at least three full, relevant peer-reviewed papers that contribute distinct,
+complementary evidence. Compare how they agree, extend, or challenge one another,
+then connect the synthesis to product evidence and decisions. A paper count or list
+of summaries alone does not meet this requirement. The set is shared across the
+whole task chain, not repeated for each workflow or worker; report when research
+is incomplete.
 
 ## Workflow
 
@@ -73,18 +61,11 @@ claim the rule improved results until representative outcomes have been compared
    relevant official documentation, issue reports, or release notes when the cause
    depends on framework or dependency behavior. Do not replace the symptom with a
    fallback until you understand why it occurs.
-4. **Research and compare approaches.** Read full,
-   relevant, peer-reviewed papers from established scholarly publishers or proceedings
-   (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
-   Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
-   press releases, AI-written summaries, abstracts, and search snippets do not count;
-   vendor documents may confirm vendor-specific facts. For each paper, record its
-   method, scope, finding, limitations, and relevance to the failure. Also inspect how
-   mature products solve it and what users or maintainers criticize. Check whether a
-   seemingly better approach fits this product's constraints. If fewer than three
-   suitable full papers can be read for the task, report the gap and mark the research
-   incomplete; do not pad it. The three-paper minimum is a workflow requirement, not a
-   research-established optimum.
+4. **Research and compare approaches.** Follow [Research](RESEARCH.md) to select and
+   synthesize distinct evidence about the cause, candidate fixes, known weaknesses, and
+   how to judge the result. Also inspect mature products and user or maintainer criticism.
+   Check whether a seemingly better approach fits this product's constraints and actual
+   failure path.
 5. **Fix only the defect.** Make the smallest complete change that corrects the cause.
    Reuse the existing behavior where it fits. Do not add a parallel API, broad cleanup,
    or speculative fallback. If you find material bloat or a separate quality problem,

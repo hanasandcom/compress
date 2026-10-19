@@ -30,25 +30,13 @@ without changing files. Treat confirmed repetitions of the same underlying probl
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 
-Research is required. In chained work, choose one shared set of N relevant full,
-peer-reviewed papers for the whole task (N must be at least three); carry findings
-between workflows and add papers only for important unanswered questions. Select studies
-to test current assumptions, including findings that challenge the proposed direction.
-When work touches a domain's behavior, data processing, or architecture, compare the
-actual pipeline stage by stage with established designs and recent research: what works,
-what is missing, and what could improve it. Assess candidate methods such as NLP or
-bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
-conclusions to paper methods, scope, limits, and evidence from this product.
-
-Apply research, do not just cite it. For each paper, carry forward its method, scope,
-finding, limitation, and the local question or check it suggests. Keep a concise shared
-note across workflow handoffs instead of repeating source text. Tests show only whether
-covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost. The research set must answer named decisions in this task: do not count papers
-that are only loosely related. The minimum of three applies once across the whole
-task chain, not once per worker or workflow. Track research time and report when the
-cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
-claim the rule improved results until representative outcomes have been compared.
+Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
+uses at least three full, relevant peer-reviewed papers that contribute distinct,
+complementary evidence. Compare how they agree, extend, or challenge one another,
+then connect the synthesis to product evidence and decisions. A paper count or list
+of summaries alone does not meet this requirement. The set is shared across the
+whole task chain, not repeated for each workflow or worker; report when research
+is incomplete.
 
 Assess product and architecture coherence in the audited scope. Trace the user journey
 or, for a game, its core play loop and reason to return; connect each major component to
@@ -76,18 +64,10 @@ or time spent alone is not evidence of value. Keep this assessment read-only.
    duplicate behavior, abandoned implementations, broken paths, maintenance burden, and
    risks. Use evidence such as call volume, incidents, support feedback, and dependency
    relationships. Lines of code or number of APIs alone do not prove waste or value.
-5. **Read research.** Read relevant full, peer-reviewed research papers. Prefer
-   empirical studies from established scholarly publishers or
-   conference proceedings, such as Elsevier, Springer Nature, Wiley, Taylor & Francis,
-   IEEE, Oxford University Press, or ACM, or peer-reviewed university research. Do not
-   count corporate style guides, vendor blogs, press releases, AI-written summaries,
-   abstracts alone, or search snippets toward the three papers. Vendor documentation may
-   confirm vendor-specific behavior, but it does not replace research. For each paper,
-   record its method, scope, main finding, limitations, and how it changes or tests the
-   audit's conclusions. Connect research to evidence from this system; do not treat a
-   study of other projects as proof about this one. If fewer than three relevant full
-   papers can be found or accessed for the task, report the gap and mark this comparison
-   incomplete instead of padding it with unrelated sources.
+5. **Read and compare research.** Follow [Research](RESEARCH.md) to use distinct evidence
+   about common designs, failure modes, and quality checks. Connect the synthesis to
+   this system's architecture, telemetry, and user or maintenance evidence; studies of
+   other products do not establish what happens here.
 6. **Compare against good practice.** Use the research, relevant standards, and direct
    project evidence to assess material risks or non-standard design. Use product
    feedback and analytics where available. Separate verified findings from inference;

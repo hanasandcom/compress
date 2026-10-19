@@ -5,7 +5,10 @@ Compress provides separate instructions for common software tasks. It is a set o
 ## How to use it
 
 1. Choose the workflow that matches the task.
-2. Provide the workflow and its linked shared references: [session control](skill/SESSION_CONTROL.md), plus the relevant part of the [wording dictionary](dictionary/wording.md) when the agent writes prose. If the agent cannot access this repository, include those references with the task.
+2. Provide the workflow and its shared references: [session control](skill/SESSION_CONTROL.md),
+   [research](skill/RESEARCH.md), and the relevant part of the [wording
+   dictionary](dictionary/wording.md) when the agent writes prose. If the agent cannot
+   access this repository, include those references with the task.
 3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, authorized actions, and access to evidence the decision depends on, such as production usage data for an API audit. Mark facts the agent cannot verify as unknown.
 4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
@@ -22,26 +25,14 @@ dependencies, not by repository boundaries alone. If a fix crosses into a separa
 product or independently owned service, report the boundary and establish authority
 before changing it.
 
-Research is required. In chained work, choose one shared set of N relevant full,
-peer-reviewed papers for the whole task (N must be at least three); carry findings
-between workflows and add papers only for important unanswered questions. Select studies
-to test current assumptions, including findings that challenge the proposed direction.
-When work touches a domain's behavior, data processing, or architecture, compare the
-actual pipeline stage by stage with established designs and recent research: what works,
-what is missing, and what could improve it. Assess candidate methods such as NLP or
-bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
-conclusions to paper methods, scope, limits, and evidence from this product.
-
-Apply research, do not just cite it. For each paper, carry forward its method, scope,
-finding, limitation, and the local question or check it suggests. Keep a concise shared
-note across workflow handoffs instead of repeating source text. Tests show only whether
-covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost. Choose papers to answer named decisions. The three-paper minimum applies to the
-whole task chain, not to each worker or workflow; use the same set across the chain and
-add another paper only for a material unanswered question. Do not pad the set with
-loosely related papers. If three relevant full papers cannot be found or read, state the
-gap and the decision it leaves unresolved. Track research effort during workflow
-evaluation; do not claim the minimum improves results without comparing outcomes.
+Research is required in every workflow. Follow the [Research protocol](skill/RESEARCH.md):
+use at least three full relevant peer-reviewed papers with distinct, complementary
+contributions; compare how they extend, challenge, or qualify one another; and tie the
+synthesis to product evidence and a concrete decision or quality check. Three papers
+that repeat the same evidence or never affect the assessment are not enough. The shared
+set applies to the whole task chain, not separately to each workflow or worker. Report
+when the research is incomplete; do not pad the set or claim a product improvement
+without checking it.
 
 ## Why the workflow uses research
 
@@ -127,7 +118,7 @@ Report missing measurements and tradeoffs. Keep, revise, or remove a rule based 
 comparison; a paper citation or one successful task does not show that this workflow
 helped.
 
-## Workflows
+## Workflows and shared guides
 
 - [Build](skill/BUILD.md) — add or extend a requested capability.
 - [Fix](skill/FIX.md) — correct a specific defect.
@@ -139,3 +130,4 @@ helped.
 - [Parallelization](skill/PARALLELIZATION.md) — divide one coherent goal into independent work.
 - [Multitasking](skill/MULTITASKING.md) — assign separate requested outcomes to separate owners.
 - [Session Control](skill/SESSION_CONTROL.md) — keep the user in control across active work, decisions, and handoffs.
+- [Research](skill/RESEARCH.md) — choose, compare, and apply a useful set of papers.

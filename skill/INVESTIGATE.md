@@ -30,25 +30,13 @@ without changing files. Treat confirmed repetitions of the same underlying probl
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 
-Research is required. In chained work, choose one shared set of N relevant full,
-peer-reviewed papers for the whole task (N must be at least three); carry findings
-between workflows and add papers only for important unanswered questions. Select studies
-to test current assumptions, including findings that challenge the proposed direction.
-When work touches a domain's behavior, data processing, or architecture, compare the
-actual pipeline stage by stage with established designs and recent research: what works,
-what is missing, and what could improve it. Assess candidate methods such as NLP or
-bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
-conclusions to paper methods, scope, limits, and evidence from this product.
-
-Apply research, do not just cite it. For each paper, carry forward its method, scope,
-finding, limitation, and the local question or check it suggests. Keep a concise shared
-note across workflow handoffs instead of repeating source text. Tests show only whether
-covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost. The research set must answer named decisions in this task: do not count papers
-that are only loosely related. The minimum of three applies once across the whole
-task chain, not once per worker or workflow. Track research time and report when the
-cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
-claim the rule improved results until representative outcomes have been compared.
+Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
+uses at least three full, relevant peer-reviewed papers that contribute distinct,
+complementary evidence. Compare how they agree, extend, or challenge one another,
+then connect the synthesis to product evidence and decisions. A paper count or list
+of summaries alone does not meet this requirement. The set is shared across the
+whole task chain, not repeated for each workflow or worker; report when research
+is incomplete.
 
 For questions about architecture or product quality, assess the relevant user journey
 or game core loop, why users spend time on it, and the product or business value; discuss
@@ -66,16 +54,9 @@ findings within the question's scope and report them without changing files.
    analytics, documentation, and actual runtime behavior where access permits. Trace
    claims that an API works or nobody uses it. Search finds code references but
    cannot prove production use or rule out external callers.
-3. **Research the question.** Read full,
-   relevant, peer-reviewed papers from established scholarly publishers or proceedings
-   (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
-   Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
-   press releases, AI-written summaries, abstracts, and search snippets do not count;
-   vendor documents may confirm vendor-specific facts. Record each paper's method,
-   scope, finding, limitations, and relevance to this question. If fewer than three
-   suitable full papers can be read for the task, report the gap and mark the research
-   incomplete; do not pad it. The three-paper minimum is a workflow requirement, not a
-   research-established optimum.
+3. **Research the question.** Follow [Research](RESEARCH.md) to compare distinct evidence
+   that supplies context, tests competing explanations, and qualifies the answer. Connect
+   the synthesis to the question's evidence and state when it leaves a decision open.
 4. **Separate evidence from inference.** Label what is confirmed, what is likely, and
    what remains unknown. For usage claims, give the data source and period; distinguish
    zero recorded traffic from missing or incomplete telemetry. Do not invent results or

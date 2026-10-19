@@ -18,9 +18,10 @@ Before dispatch, give the workers one concise, current brief containing:
   project instructions.
 - The user or product outcome, acceptance conditions, architecture, existing behavior,
   shared interfaces, and dependencies that matter to the split.
-- The shared research note: each source's method, scope, finding, limitation, and the
-  decision or local check it informs. Research is shared across the task, not repeated
-  once per worker.
+- The shared research map from [Research](RESEARCH.md): each paper's distinct role,
+  method, scope, finding, limitations, relationship to other papers, and product decision
+  or quality check. Assign any research slices by question or role; workers must not
+  collect three redundant papers each or skip synthesis between their findings.
 - Available checks, evidence sources, authorized actions, and any decision that must
   wait for the user.
 
@@ -60,11 +61,13 @@ condition. See [Session Control](SESSION_CONTROL.md) for authority and live-stat
 ## 3. Integrate and verify the whole result
 
 Each worker reports the files or artifacts changed, exact revision, checks actually
-run, results, assumptions, and unresolved issues. The coordinator integrates each
-result, resolves shared-contract conflicts, and checks the combined behavior against
-the original acceptance conditions. Review worker claims against the actual change;
-do not treat a confident summary or a passing test as proof of completeness or quality.
-Run the checks that apply to the combined result, then report what was not verified.
+run, results, assumptions, and unresolved issues. Workers handling research report what
+their source adds or challenges in the shared map. The coordinator integrates findings,
+resolves disagreements between papers and shared-contract conflicts, and checks the
+combined behavior against the original acceptance conditions. Review worker claims
+against the actual change; do not treat a confident summary or a passing test as proof
+of completeness or quality. Run the checks that apply to the combined result, then
+report what was not verified.
 
 Use one owner per shared file. If agents have isolated worktrees, integrate their
 changes explicitly before final checks. Do not let agents independently publish,

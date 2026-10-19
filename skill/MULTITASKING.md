@@ -33,10 +33,13 @@ give a worker broader permissions than the user or project granted.
 
 Use one concise shared brief with the latest user request and corrections, overall goal,
 scope, repository and base revision, project instructions, architecture and shared
-contracts, acceptance conditions, available checks, research note, and authorization
-boundaries. Then give each worker its own outcome, owned files or resources,
-dependencies, relevant evidence, expected result, and any user decision that blocks it.
-Do not send unrelated history or ask every worker to repeat shared research. Mark
+contracts, acceptance conditions, available checks, the shared research map from
+[Research](RESEARCH.md), and authorization boundaries. Then give each worker its own
+outcome, owned files or resources, dependencies, relevant evidence, expected result,
+and any user decision that blocks it.
+Do not send unrelated history or ask every worker to repeat shared research. If research
+is divided, assign distinct questions or evidence roles; return findings to the shared
+map and synthesize their agreements, conflicts, and implications across outcomes. Mark
 unknown facts clearly and refresh the brief when the user changes direction or source
 state changes. See [Session Control](SESSION_CONTROL.md).
 
