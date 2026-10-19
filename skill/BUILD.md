@@ -11,46 +11,91 @@ the smallest complete change that serves a real, stated purpose.
    purpose too; keep it intentional and scoped.
 2. **Inspect before adding.** Trace the relevant user flow and search the repository for
    existing behavior, routes, APIs, components, data, helpers, partial work, and
-   callers. Confirm what is actually used and how it behaves. Reuse or extend a matching
-   implementation; do not create a parallel API or abstraction because it is easier than
-   understanding the existing one. If evidence is incomplete, say what you could and
-   could not establish.
+   callers. Read the README and inspect existing product pages, screenshots, design
+   tokens, assets, and shared components before proposing a new visual style. Confirm
+   what is actually used and how it behaves. Reuse or extend a matching implementation;
+   do not create a parallel API or abstraction because it is easier than understanding
+   the existing one. If evidence is incomplete, say what you could and could not
+   establish.
 3. **Set the smallest useful scope.** Describe the user-visible behavior and the
    essential states, inputs, outputs, and failure cases. Include only what is needed for
    the stated outcome. Do not turn adjacent suggestions into extra features. If the
    request has no credible product or user value and is not intentionally playful,
-   explain the evidence and recommend stopping before implementation.
-4. **Research what is uncertain.** Check authoritative documentation, standards, and
-   relevant technical research for unfamiliar, risky, or consequential parts. For
-   user-facing design, inspect a small number of recognized examples or award-winning
-   implementations and identify the specific interaction or design choice that fits this
-   need. Awards show craft, not proof that a design fits this product.
+   explain the evidence and recommend stopping before implementation. If inspection
+   surfaces material bloat, inconsistent or non-standard practices, or poorly written
+   code, show concrete examples and explain their impact. Always report material
+   problems you find, even when they do not block this feature. Do not hide them or
+   silently expand the request into a broad cleanup: ask whether the user wants them
+   fixed.
+   Continue the feature separately if it can be built safely; if the issue blocks a
+   sound
+   implementation, pause that dependent work until they decide. After approval, use the
+   matching workflow, such as REFACTOR for restructuring or FIX for a specific defect;
+   then return to BUILD if feature work remains.
+4. **Research every build.** Read at least three distinct, relevant articles or primary
+   sources before implementation, even when the feature seems familiar. Use sources
+   such as authoritative documentation, standards, published research, and credible
+   implementation write-ups. For each one, record a concrete point that affects the
+   design or implementation; do not collect links as ceremony. Compare what you learn
+   with the current code and identify a weakness or a practice worth improving. Do not
+   copy a source without checking that it fits. If three useful sources cannot be found,
+   report the gap instead of inventing research. For user-facing design, also inspect
+   recognized or award-winning examples and identify a specific choice that fits this
+   need. First check how the repository expresses its visual identity and reuse its
+   colors, type, spacing, assets, and components when they fit. Do not invent a new
+   palette while suitable project choices exist. Use outside examples to improve the
+   product's design, not copy a whole page. An award is a source of ideas, not a promise
+   that a new design will win an award or fit this product.
 5. **Look for unmet needs.** Prefer direct user research, support feedback, product
    analytics, and observed behavior when available. Search Reddit, X, forums, or reviews
    for recurring complaints when that can inform the feature. Treat public posts as
    anecdotal leads, not representative evidence; separate repeated needs from one-off
    opinions and do not add every requested extra. If evidence is unavailable, record
    that limitation rather than inventing it.
-6. **Follow the project.** Read the relevant local code and project guidance. Match
-   established naming, formatting, accessibility, security, and error-handling
-   practices. Use an existing dependency or helper when it fits; avoid a new dependency,
-   layer, configuration option, fallback, or public API unless the outcome requires it.
-7. **Implement narrowly.** Make the smallest coherent change that fully delivers the
+6. **Check project practices.** Read the relevant local code and project guidance.
+   Follow useful conventions; do not preserve a weak pattern just because many files
+   use it. Use research and nearby code to check naming, formatting,
+   accessibility, security, and error handling. Improve a relevant weakness without
+   turning the task into unrelated cleanup. Reuse a dependency or helper when it fits;
+   avoid a new dependency, layer, configuration option, fallback, or public API unless
+   the outcome requires it.
+7. **Write like a person.** Use the project's voice and the wording pairs in
+   [the wording dictionary](../dictionary/wording.md). Prefer familiar words and direct,
+   concrete sentences. Do not use the dictionary's generic examples in agent-authored
+   prose unless you are quoting them to explain the problem. Remove slogans, filler,
+   inflated claims, and repeated points.
+   Do not pad or rephrase text to sound distinctive, imitate a supposed human voice, or
+   evade AI detection. Keep technical terms when they help; explain them when readers
+   need that explanation.
+8. **Implement narrowly.** Make the smallest coherent change that fully delivers the
    agreed behavior. Prefer reuse and clear control flow over duplicated logic. Keep
    normal line lengths and readable formatting: fewer lines is useful only when it does
    not hide intent or combine unrelated work. Do not optimize for low line count,
    generate speculative extension points, or add unrelated cleanup.
-8. **Check the result.** Verify the behavior at the relevant user-facing boundary,
-   including important success, empty, error, and edge states. Run focused checks that
-   cover changed behavior, and inspect the diff for duplicate logic, dead code,
-   unnecessary surface area, style drift, and accidental changes. For UI, inspect the
-   rendered result and check keyboard and accessibility basics. Tests passing does not
-   by itself establish that the feature is useful or usable.
-9. **Report evidence and limits.** Briefly state the user outcome, what existing code
+9. **Test locally.** Verify changed behavior at the relevant user-facing boundary,
+   including important success, empty, error, and edge states. Run the project's focused
+   checks and tests locally; inspect UI, keyboard use, and accessibility where relevant.
+   Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
+   drift, and accidental changes. Fix failures before committing. Passing tests alone do
+   not prove the feature is useful or usable.
+10. **Commit, push, test in staging, then redeploy.** For changes to a deployable app or
+   service, follow this order: commit and push the locally tested change, run the
+   project's server-side tests in staging, and redeploy only after those tests pass.
+   Inspect the existing deployment instructions and use the established commands and
+   checks. Always use staging before production. If staging does not exist, ask the user
+   to create or authorize creating it; do not redeploy until staging is available and
+   the tests pass. If staging tests fail, stop, report the failure, fix it, and repeat
+   the checks. For a project with no deployable app or service, commit and push after
+   local tests, and state why staging and redeployment do not apply.
+11. **Report evidence and limits.** Briefly state the user outcome, what existing code
    was reused or why new code was needed, what research or user evidence informed the
-   design, what changed, and what checks ran. Call out material unknowns and unverified
-   assumptions. Never imply that a search, test, analytics check, or design review
-   happened if it did not.
+   design, what changed, and what local, staging, and deployment checks actually ran.
+   Always report codebase quality findings from the inspected scope with concrete
+   examples and effects. If you found no material issue, name the scope inspected rather
+   than claiming the whole repository is clean. State unknowns and unverified
+   assumptions.
+   Never imply that a search, test, analytics check, or design review happened if it did
+   not.
 
 ## Research basis
 
@@ -67,3 +112,11 @@ user’s task simpler ([GOV.UK, start by learning user
 needs](https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs);
 [make the service simple to
 use](https://www.gov.uk/service-manual/service-standard/point-4-make-the-service-simple-to-use)).
+Writing guidance also favors plain language tied to user needs: the Office for National
+Statistics advises writing simply and avoiding jargon ([plain language
+guide](https://service-manual.ons.gov.uk/content/writing-for-users/plain-language)). A
+study of one million arXiv abstracts reported shifts in word frequencies associated
+with ChatGPT-style revisions; it measures a writing pattern in a defined corpus, not a
+universal detector of AI text ([Kobak et al., *Is ChatGPT Transforming Academics'
+Writing Style?*](https://arxiv.org/abs/2404.08627)). Use this as a reason to write for
+clarity and specificity, not to fingerprint or disguise authorship.
