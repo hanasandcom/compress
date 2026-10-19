@@ -34,8 +34,8 @@ Treat research findings within their actual methods and limits, not as proof tha
 design will work here.
 
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
-section of the [wording dictionary](../dictionary/wording.md). Apply its natural
-examples only when they fit the facts; do not mechanically replace words or load all
+section of the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only when they fit the facts; do not mechanically replace words or load all
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
@@ -54,6 +54,15 @@ then connect the synthesis to product evidence and decisions. A paper count or l
 of summaries alone does not meet this requirement. The set is shared across the
 whole task chain, not repeated for each workflow or worker; report when research
 is incomplete.
+
+## Feature outcome check
+
+Before coding, name the user, the task, and an observable result that would make the
+feature useful. Trace the whole journey through source data, UI, API, errors, and the
+service or decision delivered at the end. A route, price card, or passing component test
+is not feature success. For domain software, check the task against how practitioners do
+it and use domain-appropriate quality measures. After implementation, exercise that full
+path and report whether it delivers the promised result.
 
 ## Workflow
 

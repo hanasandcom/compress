@@ -17,7 +17,8 @@ the whole result; assign non-overlapping scopes to avoid file conflicts. If dele
 will save time, delegate instead of merely suggesting it.
 
 Before writing user-facing or maintainer-facing prose, consult the matching section of
-the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
 one section answers the question. Check the answer and final report against the
 dictionary.
@@ -44,6 +45,15 @@ monetization only where applicable. Trace component boundaries, data flow, contr
 and state transitions. For feeds or recommendations, consider user benefit and control,
 diversity, and tradeoffs; engagement or time spent alone is not proof of value. Keep
 findings within the question's scope and report them without changing files.
+
+## Whole-scope finding check
+
+For product-quality questions, trace the entire customer task and compare each substantial
+surface with the product's purpose. Continue after the first plausible defect: search for
+sibling failures and the code or test patterns that create the same cost. Missing
+analytics limits usage claims; it does not prevent findings about broken, misleading,
+redundant, or purposeless functionality. Report concrete examples and effects in the
+inspected scope.
 
 ## Workflow
 
@@ -74,7 +84,7 @@ findings within the question's scope and report them without changing files.
    the whole repository has the problem unless you checked it.
 6. **Answer directly.** Give the answer first, then the strongest evidence, limitations,
    and what would resolve remaining uncertainty. Link sources when research was used.
-   Use the [wording dictionary](../dictionary/wording.md); keep the response specific
+   Check the response against [wording.md](../dictionary/wording.md) and [habits.md](../dictionary/habits.md); keep it specific
    and short.
 7. **Keep the boundary.** Do not edit code, commit, push, or deploy. If the user wants a
    change after the investigation, use BUILD, FIX, REMOVE, or REFACTOR as appropriate.

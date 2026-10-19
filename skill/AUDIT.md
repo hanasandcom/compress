@@ -18,7 +18,8 @@ the whole result; assign non-overlapping scopes to avoid file conflicts. If dele
 will save time, delegate instead of merely suggesting it.
 
 Before writing user-facing or maintainer-facing prose, consult the matching section of
-the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
 one section answers the question. Check the final report against the dictionary.
 
@@ -45,6 +46,17 @@ Map component boundaries, data flow, contracts, and state transitions, and repor
 disconnected features or missing architectural structure with evidence. For feeds or
 recommendations, assess user benefit, user control, diversity, and tradeoffs; engagement
 or time spent alone is not evidence of value. Keep this assessment read-only.
+
+## Product and code quality check
+
+Do not stop at route counts or absent telemetry. Trace the main customer tasks and check
+what useful, correct, actionable result each delivers, where it breaks, and which pages
+or features add no user or operational outcome. Continue with repository evidence when
+analytics are unavailable. Inspect duplicate implementations and APIs, unused branches,
+oversized modules, speculative abstractions, excessive configuration, and tests with weak
+assertions, poor failure coverage, duplicate suites, or unnecessary setup. Show paths and
+effects; counts only locate candidates. Separate core functionality from useful adjacent
+support and from ceremonial or disconnected surfaces.
 
 ## Workflow
 
@@ -82,7 +94,7 @@ or time spent alone is not evidence of value. Keep this assessment read-only.
 8. **Report plainly.** Always report material bloat, duplication, broken behavior, and
    missing evidence found in the audited scope, with paths, examples, and effects.
    Do not claim the whole system is clean if only part was checked. Use the [wording
-   dictionary](../dictionary/wording.md).
+   dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
 
 ## Research basis
 

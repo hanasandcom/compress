@@ -18,7 +18,8 @@ the whole result; assign non-overlapping scopes to avoid file conflicts. If dele
 will save time, delegate instead of merely suggesting it.
 
 Before writing user-facing or maintainer-facing prose, consult the matching section of
-the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
+the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
 one section answers the question. Check findings and the final report against the
 dictionary.
@@ -46,6 +47,14 @@ would return; discuss monetization only where it applies. For feeds or recommend
 consider user benefit and control, diversity, and tradeoffs; engagement or time spent
 alone does not establish value. Keep the review read-only and tie concerns to inspected
 code or product evidence.
+
+## Product behavior check
+
+Review the full customer path affected by the change: source data, transformations,
+decision or action, delivery, and failure states. Judge whether the product gives the
+user the useful information or service it promises. Do not stop at one feature/test pair,
+rendered markup, or a successful HTTP status. Check nearby architecture, duplicate APIs,
+unnecessary code, and whether tests would catch a real failure.
 
 ## Workflow
 
@@ -81,5 +90,5 @@ code or product evidence.
    wants a separate FIX, REMOVE, or REFACTOR task.
 8. **Keep the boundary.** Do not edit, commit, push, or deploy during a review. If the
    user asks you to address findings, switch to the matching change workflow.
-9. **Write plainly.** Use the [wording dictionary](../dictionary/wording.md). Avoid
+9. **Write plainly.** Use the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md). Avoid
    padded praise, generic approval, and unsupported claims.

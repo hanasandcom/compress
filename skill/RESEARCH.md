@@ -2,6 +2,9 @@
 
 Use this protocol whenever a task workflow requires research. The goal is to improve
 the product decision and test its quality, not to collect citations.
+Write source notes and synthesis in plain language. Before handing them to another
+agent or the user, check [wording examples](../dictionary/wording.md) and
+[AI writing habits](../dictionary/habits.md).
 
 ## Choose a set that adds distinct evidence
 
@@ -72,12 +75,56 @@ The minimum is a task rule, not a research finding that three is optimal. If few
 three suitable full papers can be read, if the papers do not add distinct evidence, or
 if they do not inform a product decision, report the research as incomplete and name
 the unresolved decision. Do not pad the set or pretend a source changed the result.
-Track time spent searching and reading. Keep the three-paper minimum across a chain,
-not per workflow or worker; add papers only when an important decision remains open.
+Track time spent searching and reading. Keep the minimum of three across a chain, not
+per worker. Scale the set to the work: for a task that uses several workflows or covers
+several product questions, aim for one to three papers for each workflow or distinct
+evidence question, and add more when important decisions remain unsupported. This is a
+planning range, not a quota. One paper can serve more than one workflow only when it
+directly informs both. For example, a threat-intelligence product review needs CTI
+pipeline and domain-specific evidence; generic software studies cannot stand in for
+research on incident collection, actor disclosures, or analyst outcomes.
+
+Before searching, name the product domain and the decision each workflow must make.
+Prefer papers that study that domain and the actual outcome in question. For a broad
+product review, cover different evidence roles: how the domain works, weaknesses or
+competing approaches, and methods for evaluating quality or user outcomes. Do not use
+three convenient papers from an adjacent field when directly relevant work exists.
+If it does not, say what you searched and what evidence remains unavailable.
+
 Evaluate whether this approach improves outcomes by comparing representative tasks,
 including rework, correctness, human intervention, and time spent on research.
 
 ## Research basis and limits
+
+Software quality research gives concrete checks for these workflows, with limits that
+must stay visible. In SWE-bench, real repository issues often had small reference patches;
+the authors describe agents missing existing project helpers, and caution that passing
+tests does not establish readability or completeness. This supports inspecting callers,
+existing code, and the whole requested behavior before judging a change. The benchmark
+uses 12 repositories and earlier model generations, so it does not establish what is
+waste in another repository. [Jimenez et al., ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/file/edac78c3e300629acfe6cbe9ca88fb84-Paper-Conference.pdf).
+
+A study of generated JavaScript tests assessed assertions separately from coverage and
+identified test-suite minimization as future work. This supports checking whether tests
+would catch a failure, not relying on test count or coverage alone. Its GPT-3.5 and npm
+sample limits transfer to current repositories. [Schäfer et al., IEEE TSE
+2024](https://doi.org/10.1109/TSE.2023.3334955). A large static-analysis comparison of
+AI- and human-written functions found differences in repetition, unused constructs,
+complexity, and defects, but generated functions from docstrings outside their original
+repositories. It supports inspecting several quality signals together; it does not show
+that line count measures waste in a real product. [Cotroneo et al., IEEE ISSRE
+2025](https://doi.org/10.1109/ISSRE66568.2025.00035).
+
+Use field research for the product domain as well as software-engineering research. For
+example, a threat-intelligence product review can pair CTI extraction research evaluated
+on labeled reports with studies of ransomware incident data and attacker claims. Those
+sources support provenance, field-level uncertainty, and task-specific extraction
+measures; they do not establish customer value or a product's quality without checking
+its own data and user paths. [Park and Lee, EMNLP Industry Track
+2022](https://aclanthology.org/anthology-files/pdf/emnlp/2022.emnlp-industry.54.pdf);
+[Sarabi et al., USENIX Security 2025](https://www.usenix.org/system/files/usenixsecurity25-sarabi.pdf);
+[Meurs et al., *Computers & Security*
+2024](https://ris.utwente.nl/ws/portalfiles/portal/349110993/1-s2.0-S0167404823005801-main.pdf).
 
 These papers support purposeful integration of distinct evidence, but do not validate
 this protocol for software changes or prove that three papers are enough. They explain

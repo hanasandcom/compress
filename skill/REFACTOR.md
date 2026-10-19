@@ -7,8 +7,8 @@ pauses, approvals, verification, and handoff. A refactor request does not grant
 permission to publish or affect production.
 
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
-section of the [wording dictionary](../dictionary/wording.md). Apply its natural
-examples only when they fit the facts; do not mechanically replace words or load all
+section of the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only when they fit the facts; do not mechanically replace words or load all
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
@@ -51,6 +51,16 @@ of summaries alone does not meet this requirement. The set is shared across the
 whole task chain, not repeated for each workflow or worker; report when research
 is incomplete.
 
+## Quality and cost check
+
+For product-scale refactors, assess whether the architecture supports a coherent user
+outcome. Name the modules, APIs, repeated behavior, oversized files, speculative layers,
+or generated content driving the cost; repository LOC alone is not a diagnosis. Inspect
+tests for meaningful assertions, realistic cases, fault detection, duplicate coverage,
+unrelated setup, and whether they test user behavior or only implementation details.
+Compare the useful product task end to end before and after the refactor, not only unit
+outputs.
+
 ## Workflow
 
 1. **Name the improvement.** State what makes the current structure costly or hard to
@@ -84,4 +94,4 @@ is incomplete.
 8. **Report plainly.** State the structural problem, what changed, the behavior checks
    and comparisons that ran, and any uncovered behavior. Always report other material
    codebase problems found in the inspected scope, with examples and effects. Use the
-   [wording dictionary](../dictionary/wording.md).
+   [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).

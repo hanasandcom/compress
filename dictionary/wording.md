@@ -5,8 +5,9 @@ The guidance draws on GOV.UK, Microsoft, and Google writing guides, plus researc
 LLM-associated word-frequency changes. The examples below are original examples for
 this repository; they are not copied from those guides.
 
-Use the right-hand wording only when it is true in context. Fill in brackets with real
-facts. These are prompts to make a sentence clearer, not a blacklist or automatic
+For AI writing patterns and additional paired examples, see
+[habits.md](habits.md). Use the right-hand wording only when it is true in context. Fill
+in brackets with real facts. These are prompts to make a sentence clearer, not a blacklist or automatic
 replacement table. Words such as “delve”, “robust”, or “comprehensive” are not wrong on
 their own, and no single word proves that a person or model wrote a passage. Remove
 phrases that add no meaning; keep detail that helps the reader understand the result.

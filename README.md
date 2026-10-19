@@ -7,7 +7,8 @@ Compress provides separate instructions for common software tasks. It is a set o
 1. Choose the workflow that matches the task.
 2. Provide the workflow and its shared references: [session control](skill/SESSION_CONTROL.md),
    [research](skill/RESEARCH.md), and the relevant part of the [wording
-   dictionary](dictionary/wording.md) when the agent writes prose. If the agent cannot
+   dictionary](dictionary/wording.md) plus [AI writing habits](dictionary/habits.md)
+   when the agent writes prose. If the agent cannot
    access this repository, include those references with the task.
 3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, authorized actions, and access to evidence the decision depends on, such as production usage data for an API audit. Mark facts the agent cannot verify as unknown.
 4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
@@ -26,13 +27,13 @@ product or independently owned service, report the boundary and establish author
 before changing it.
 
 Research is required in every workflow. Follow the [Research protocol](skill/RESEARCH.md):
-use at least three full relevant peer-reviewed papers with distinct, complementary
-contributions; compare how they extend, challenge, or qualify one another; and tie the
-synthesis to product evidence and a concrete decision or quality check. Three papers
-that repeat the same evidence or never affect the assessment are not enough. The shared
-set applies to the whole task chain, not separately to each workflow or worker. Report
-when the research is incomplete; do not pad the set or claim a product improvement
-without checking it.
+use at least three full, relevant peer-reviewed papers across the task, then scale the
+set to the number of workflows and distinct product questions. For a broad evaluation,
+aim for one to three useful papers for each workflow or evidence question. Choose work
+that studies the actual product domain; generic software papers cannot replace research
+on the field the product serves. Papers must add distinct evidence, challenge or qualify
+one another, and change a product check or decision. Report when research is incomplete;
+do not pad the set or claim a product improvement without checking it.
 
 ## Why the workflow uses research
 

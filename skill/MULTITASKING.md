@@ -66,5 +66,6 @@ than forcing a split. Do not reduce agent count as a goal; use available capacit
 real, bounded work and account for integration in the completion time.
 
 Before writing user-facing or maintainer-facing prose, consult the relevant section of
-the [wording dictionary](../dictionary/wording.md). Report each outcome, its owner,
+the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Report each outcome, its owner,
 integration and verification, and unresolved dependencies plainly.

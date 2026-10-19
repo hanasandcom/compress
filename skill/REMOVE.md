@@ -8,8 +8,8 @@ pauses, approvals, verification, and handoff. A removal request does not authori
 destructive or external actions beyond its stated scope.
 
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
-section of the [wording dictionary](../dictionary/wording.md). Apply its natural
-examples only when they fit the facts; do not mechanically replace words or load all
+section of the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only when they fit the facts; do not mechanically replace words or load all
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
@@ -52,6 +52,18 @@ of summaries alone does not meet this requirement. The set is shared across the
 whole task chain, not repeated for each workflow or worker; report when research
 is incomplete.
 
+## Product value check
+
+Do not let code references or missing analytics decide whether a capability is valuable.
+For each page, API, workflow, and substantial module, identify its job: core user outcome,
+useful adjacent support, operational need, or no demonstrated role. Check whether it
+actually completes that job, what it costs to maintain, and whether another path already
+does it. Keep useful adjacent features when they serve the product; flag elaborate
+readiness, status, or informational surfaces that do not help users complete a real task.
+Missing telemetry limits visit claims; it does not stop the value assessment. Check
+external-caller risk separately and stage public API removal only when the concrete risk
+warrants it.
+
 ## Workflow
 
 1. **Define the removal.** Name the capability, surfaces, APIs, and users in scope.
@@ -90,4 +102,4 @@ is incomplete.
 8. **Report plainly.** State what was removed, evidence of use or non-use, the period
    and coverage of usage data, affected callers, checks, and remaining risks. Always
    report other material codebase problems found in the inspected scope, with examples
-   and effects. Use the [wording dictionary](../dictionary/wording.md).
+   and effects. Check the final report against [wording.md](../dictionary/wording.md) and [habits.md](../dictionary/habits.md).

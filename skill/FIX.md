@@ -29,8 +29,8 @@ outcomes; engagement or time spent alone does not establish user value. Apply re
 within its actual scope and limits, not as proof that a fix will work here.
 
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
-section of the [wording dictionary](../dictionary/wording.md). Apply its natural
-examples only when they fit the facts; do not mechanically replace words or load all
+section of the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Apply natural examples only when they fit the facts; do not mechanically replace words or load all
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
@@ -49,6 +49,14 @@ then connect the synthesis to product evidence and decisions. A paper count or l
 of summaries alone does not meet this requirement. The set is shared across the
 whole task chain, not repeated for each workflow or worker; report when research
 is incomplete.
+
+## Cause and scope check
+
+List the separate failures caused by the defect, then search related pages, APIs, data
+paths, and reports for every instance. Fix all confirmed instances in scope. Keep
+unrelated defects separate and report them; do not imply one symptom fix resolved them.
+Verify the original failure, each sibling instance, and the user's full task path. A
+narrow green test does not establish that the product now works as promised.
 
 ## Workflow
 
@@ -91,4 +99,4 @@ is incomplete.
 8. **Report plainly.** State the cause, the correction, the checks that ran, and any
    remaining uncertainty. Always report material codebase problems found in the
    inspected scope, with concrete examples and effects. Use the [wording
-   dictionary](../dictionary/wording.md); do not pad the report.
+   dictionary](../dictionary/wording.md) and [habits.md](../dictionary/habits.md); do not pad the report.

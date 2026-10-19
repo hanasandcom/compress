@@ -157,5 +157,7 @@ These papers inform control points; they do not validate this workflow as a whol
   manipulating the overseer. [Carey and Everitt, UAI 2023](https://proceedings.mlr.press/v216/carey23a.html).
 
 Use the [wording dictionary](../dictionary/wording.md) for user-facing or
-maintainer-facing prose. Keep control information specific to the current task; do not
+maintainer-facing prose, and check [AI writing habits](../dictionary/habits.md) for
+repetition, generic phrasing, and unsupported claims. Keep control information specific
+to the current task; do not
 turn the handoff into a second project README.

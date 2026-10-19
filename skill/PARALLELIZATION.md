@@ -88,4 +88,5 @@ other independent work moving. Do not reduce agent count as an end in itself, an
 create artificial work just to fill slots.
 
 Before writing user-facing or maintainer-facing prose, consult the relevant section of
-the [wording dictionary](../dictionary/wording.md). Keep the handoff factual and concise.
+the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
+Keep the handoff factual and concise.
