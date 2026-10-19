@@ -10,10 +10,29 @@ Compress provides separate instructions for common software tasks. It is a set o
    dictionary](dictionary/wording.md) plus [AI writing habits](dictionary/habits.md)
    when the agent writes prose. If the agent cannot
    access this repository, include those references with the task.
-3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, and actions already authorized. Provide available evidence, such as production usage data for an API audit. If data is missing, mark only the related claim as unknown and continue the product-value assessment from its purpose, working behavior, outputs, and other available evidence.
+3. Include the target repository, latest user direction, relevant project instructions,
+   current branch/revision, constraints, and actions already authorized. Check the actual
+   workspace and sandbox limits before deciding the repository is unavailable; follow
+   [Session Control](skill/SESSION_CONTROL.md). Provide available evidence, such as
+   production usage data for an API audit. If data is missing, mark only the related
+   claim as unknown and continue the product-value assessment from its purpose, working
+   behavior, outputs, and other available evidence.
 4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
+
+Do not assume the sandbox is empty or that a repository must be missing because it is
+not in the current directory. Inspect the current checkout, allowed workspace roots,
+attached projects or worktrees, and available repository connectors. In Codex, check
+whether the task is using a local checkout, managed worktree, or isolated cloud
+workspace; the user's desktop paths may not be mounted in a cloud task. If the needed
+repository or files are outside the allowed environment, request approval for the
+specific access or operation through the platform. State the path and why access is
+needed; do not request broad access by default. A remote 404 can mean the project is
+private or the current account lacks access. Check the owner, repository name, and
+available authenticated routes before saying it does not exist. If access remains
+unavailable, report what you checked and the exact permission or input needed. Do not
+claim that no files are available without checking the workspace.
 
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the

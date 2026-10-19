@@ -77,8 +77,11 @@ path and report whether it delivers the promised result.
    tokens, assets, and shared components before proposing a new visual style. Confirm
    what is actually used and how it behaves. Reuse or extend a matching implementation;
    do not create a parallel API or abstraction because it is easier than understanding
-   the existing one. If evidence is incomplete, say what you could and could not
-   establish.
+   the existing one. Before saying the repository is missing, inspect the actual
+   checkout, permitted workspace roots, attached worktrees, and available connectors.
+   If required files are outside the sandbox, request approval for the specific access
+   through the platform; do not assume the sandbox is empty or try to bypass it. If
+   evidence is incomplete, say what you could and could not establish.
 3. **Set the smallest useful scope.** Describe the user-visible behavior and the
    essential states, inputs, outputs, and failure cases. Include only what is needed for
    the stated outcome. Do not turn adjacent suggestions into extra features. If the

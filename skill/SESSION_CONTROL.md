@@ -18,6 +18,24 @@ relevant project instructions. Establish and keep in working context:
 - Actions already authorized, who authorized them, the exact target and environment,
   and any approval or human decision still required.
 
+Inspect the actual execution environment before declaring a repository unavailable.
+Check the current checkout, permitted workspace roots, attached projects or worktrees,
+and repository connectors available to the task. A sandbox is a permission boundary,
+not evidence that it contains no files. Do not assume the repository lives in the
+current directory, and do not conclude it is missing from one failed remote lookup.
+In Codex, establish whether the task uses a local checkout, managed worktree, or
+isolated cloud workspace; a cloud workspace does not automatically expose paths on the
+user's desktop. For a 404, verify the owner/name and check whether an authenticated
+connector or authorized SSH route is available; private repositories can appear
+unavailable to an unauthenticated request.
+
+If a required path or operation is outside the granted sandbox, request platform
+approval for that specific access and explain the path and purpose. Do not try to
+bypass the boundary or request broad access without a concrete need. Continue safe
+work that uses available files; do not pretend unrelated files are the requested
+repository. If access is denied or unavailable, state the paths and routes checked and
+the exact access needed to continue.
+
 Derive missing project facts from the source when possible; mark what cannot be checked
 as unknown. Load only references that the selected workflow needs. For parallel work,
 send workers the concise shared task brief and their scoped context; do not dump the
