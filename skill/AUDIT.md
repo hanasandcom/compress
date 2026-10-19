@@ -12,7 +12,19 @@ Search related files and product surfaces for the same issue, not just the repor
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
 why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files.
+without changing files. Treat confirmed repetitions of the same underlying problem in
+related product scope as part of the task. Ask before expanding only for separate
+problems outside that scope.
+
+Research is required. In chained work, choose one shared set of N relevant full,
+peer-reviewed papers for the whole task (N must be at least three); carry findings
+between workflows and add papers only for important unanswered questions. Select studies
+to test current assumptions, including findings that challenge the proposed direction.
+When work touches a domain's behavior, data processing, or architecture, compare the
+actual pipeline stage by stage with established designs and recent research: what works,
+what is missing, and what could improve it. Assess candidate methods such as NLP or
+bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
+conclusions to paper methods, scope, limits, and evidence from this product.
 
 ## Workflow
 
@@ -32,8 +44,8 @@ without changing files.
    duplicate behavior, abandoned implementations, broken paths, maintenance burden, and
    risks. Use evidence such as call volume, incidents, support feedback, and dependency
    relationships. Lines of code or number of APIs alone do not prove waste or value.
-5. **Read research.** For every audit, read at least three full, relevant, peer-reviewed
-   research papers. Prefer empirical studies from established scholarly publishers or
+5. **Read research.** Read relevant full, peer-reviewed research papers. Prefer
+   empirical studies from established scholarly publishers or
    conference proceedings, such as Elsevier, Springer Nature, Wiley, Taylor & Francis,
    IEEE, Oxford University Press, or ACM, or peer-reviewed university research. Do not
    count corporate style guides, vendor blogs, press releases, AI-written summaries,
@@ -41,9 +53,9 @@ without changing files.
    confirm vendor-specific behavior, but it does not replace research. For each paper,
    record its method, scope, main finding, limitations, and how it changes or tests the
    audit's conclusions. Connect research to evidence from this system; do not treat a
-   study of other projects as proof about this one. If three relevant full papers cannot
-   be found or accessed, report the gap and mark this comparison incomplete instead of
-   padding it with unrelated sources.
+   study of other projects as proof about this one. If fewer than three relevant full
+   papers can be found or accessed for the task, report the gap and mark this comparison
+   incomplete instead of padding it with unrelated sources.
 6. **Compare against good practice.** Use the research, relevant standards, and direct
    project evidence to assess material risks or non-standard design. Use product
    feedback and analytics where available. Separate verified findings from inference;

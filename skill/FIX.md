@@ -12,7 +12,19 @@ Search related files and product surfaces for the same issue, not just the repor
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
 why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files.
+without changing files. Treat confirmed repetitions of the same underlying problem in
+related product scope as part of the task. Ask before expanding only for separate
+problems outside that scope.
+
+Research is required. In chained work, choose one shared set of N relevant full,
+peer-reviewed papers for the whole task (N must be at least three); carry findings
+between workflows and add papers only for important unanswered questions. Select studies
+to test current assumptions, including findings that challenge the proposed direction.
+When work touches a domain's behavior, data processing, or architecture, compare the
+actual pipeline stage by stage with established designs and recent research: what works,
+what is missing, and what could improve it. Assess candidate methods such as NLP or
+bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
+conclusions to paper methods, scope, limits, and evidence from this product.
 
 ## Workflow
 
@@ -25,7 +37,7 @@ without changing files.
    relevant official documentation, issue reports, or release notes when the cause
    depends on framework or dependency behavior. Do not replace the symptom with a
    fallback until you understand why it occurs.
-4. **Research and compare approaches.** For every fix, read at least three full,
+4. **Research and compare approaches.** Read full,
    relevant, peer-reviewed papers from established scholarly publishers or proceedings
    (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
    Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
@@ -33,13 +45,15 @@ without changing files.
    vendor documents may confirm vendor-specific facts. For each paper, record its
    method, scope, finding, limitations, and relevance to the failure. Also inspect how
    mature products solve it and what users or maintainers criticize. Check whether a
-   seemingly better approach fits this product's constraints. If three suitable full
-   papers cannot be read, report the gap and mark the research incomplete; do not pad it.
-   Three is a workflow minimum, not a research-established optimum.
+   seemingly better approach fits this product's constraints. If fewer than three
+   suitable full papers can be read for the task, report the gap and mark the research
+   incomplete; do not pad it. The three-paper minimum is a workflow requirement, not a
+   research-established optimum.
 5. **Fix only the defect.** Make the smallest complete change that corrects the cause.
    Reuse the existing behavior where it fits. Do not add a parallel API, broad cleanup,
    or speculative fallback. If you find material bloat or a separate quality problem,
-   always show examples and their impact; ask before expanding the fix to address it.
+   always show examples and their impact. Fix confirmed repetitions of the same problem
+   in the relevant scope; ask before taking on a separate problem outside that scope.
 6. **Check the correction.** Add or update a focused regression check when appropriate.
    Verify that the original failure is gone and that important neighboring behavior
    still works. Read relevant CI results when available. Do not claim a check passed if

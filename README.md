@@ -15,7 +15,19 @@ Search related files and product surfaces for the same issue, not just the repor
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
 why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files.
+without changing files. Treat confirmed repetitions of the same underlying problem in
+related product scope as part of the task. Ask before expanding only for separate
+problems outside that scope.
+
+Research is required. In chained work, choose one shared set of N relevant full,
+peer-reviewed papers for the whole task (N must be at least three); carry findings
+between workflows and add papers only for important unanswered questions. Select studies
+to test current assumptions, including findings that challenge the proposed direction.
+When work touches a domain's behavior, data processing, or architecture, compare the
+actual pipeline stage by stage with established designs and recent research: what works,
+what is missing, and what could improve it. Assess candidate methods such as NLP or
+bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
+conclusions to paper methods, scope, limits, and evidence from this product.
 
 ## Workflows
 
