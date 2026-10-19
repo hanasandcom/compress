@@ -48,9 +48,10 @@ Research is required. Follow the shared [Research protocol](RESEARCH.md): every 
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
 complementary evidence. Compare how they agree, extend, or challenge one another,
 then connect the synthesis to product evidence and decisions. A paper count or list
-of summaries alone does not meet this requirement. The set is shared across the
-whole task chain, not repeated for each workflow or worker; report when research
-is incomplete.
+of summaries alone does not meet this requirement. Share one research map across the
+task chain, but size it for each workflow’s distinct decisions using
+[Research](RESEARCH.md). Workers should not repeat the same search. Report incomplete
+research.
 
 ## Product value check
 
@@ -69,20 +70,24 @@ warrants it.
 1. **Define the removal.** Name the capability, surfaces, APIs, and users in scope.
    Identify what should happen in its place, if anything. Treat “unused” as a claim
    to verify, not an assumption.
-2. **Check actual use.** Trace callers, imports, routes, dynamic registrations, flags,
-   integrations, docs, and tests. Check production request counts and last-use dates
-   over a stated period when available. Confirm whether the endpoint can respond and
-   what its responses do. Separate a redirect or compatibility alias from a duplicate
-   implementation or a distinct capability. For public interfaces, verify that logs
-   cover external callers before concluding they are unused. Static references alone
-   do not prove runtime use; no recorded traffic does not prove non-use if logging is
-   incomplete or external callers are possible. Mark each conclusion as confirmed,
-   disproved, or unknown, and name the evidence that would resolve an unknown.
-3. **Assess the impact.** Identify affected users, dependent systems, data, migrations,
-   and rollback needs. If evidence shows meaningful use or cannot establish whether a
-   public interface has external users, show the evidence and risk, then ask whether to
-   proceed or stage a deprecation. Do not silently leave a second API or compatibility
-   layer behind.
+2. **Check actual use and product need.** Trace callers, imports, routes, dynamic
+   registrations, flags, integrations, docs, and tests. Check production request counts
+   and last-use dates over a stated period when available. Confirm whether the endpoint
+   responds and what it returns. Separate aliases from duplicate implementations and
+   distinct capabilities. Static references prove a dependency to investigate, not
+   customer value; missing traffic records limit claims about runtime use. For each
+   page, API, workflow, and substantial module, classify its role as a core user outcome,
+   useful adjacent support, operational need, or no demonstrated role. Check whether it
+   completes that job and what it costs to maintain. Mark use conclusions as confirmed,
+   disproved, or unknown; do not use an unknown visit count to stop the value assessment.
+3. **Assess impact and removal risk.** Identify affected users, dependent systems, data,
+   migrations, and rollback needs. Show the user or operational effect of removing each
+   candidate. Keep useful adjacent features when they support the product; flag
+   readiness, status, or informational surfaces that do not help a user complete a real
+   task. For public APIs with unresolved external consumers, describe the concrete
+   breakage risk and stage removal only when that risk warrants it. Analytics uncertainty
+   does not veto removal analysis of internal pages, duplicate implementations, or
+   features without a working user outcome.
 4. **Research removal and deprecation.** Follow [Research](RESEARCH.md) to compare
    distinct evidence about usage, migration, and deprecation, and use it to test the
    removal assumptions against product evidence. Include evidence about what replaces

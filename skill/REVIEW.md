@@ -36,9 +36,10 @@ Research is required. Follow the shared [Research protocol](RESEARCH.md): every 
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
 complementary evidence. Compare how they agree, extend, or challenge one another,
 then connect the synthesis to product evidence and decisions. A paper count or list
-of summaries alone does not meet this requirement. The set is shared across the
-whole task chain, not repeated for each workflow or worker; report when research
-is incomplete.
+of summaries alone does not meet this requirement. Share one research map across the
+task chain, but size it for each workflow’s distinct decisions using
+[Research](RESEARCH.md). Workers should not repeat the same search. Report incomplete
+research.
 
 Assess coherence where the change touches it: trace affected component boundaries,
 data flow, contracts, and state, then check whether the change supports the product's
