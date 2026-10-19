@@ -18,10 +18,17 @@ you added against the dictionary.
 3. **Set a baseline.** Run or inspect the focused tests and checks that cover the
    behavior. Record relevant performance or operational measures if the refactor could
    affect them. Identify missing coverage before relying on it.
-4. **Research and compare.** Check authoritative guidance or technical writing for
-   unfamiliar patterns. Compare it with the current implementation; do not copy an
-   abstraction because it is fashionable. Fowler describes refactoring as small,
-   behavior-preserving transformations ([Refactoring][fowler]).
+4. **Research and compare.** For every refactor, read at least three full, relevant,
+   peer-reviewed papers from established scholarly publishers or proceedings (such as
+   Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University Press, or
+   ACM) or peer-reviewed university research. Company guides, vendor blogs, press
+   releases, AI-written summaries, abstracts, and search snippets do not count; vendor
+   documents may confirm vendor-specific facts. Record each paper's method, scope,
+   finding, limitations, and relevance to the code being changed. Compare research with
+   actual behavior and project constraints; do not add an abstraction because it is
+   fashionable. If three suitable full papers cannot be read, report the gap and mark
+   the research incomplete; do not pad the list. Three is a workflow minimum, not a
+   research-established optimum.
 5. **Change structure in small steps.** Keep external behavior and interfaces stable
    unless the user asked to change them. Reuse existing project patterns when they are
    sound; improve a weak pattern when it is in scope. Avoid new layers, wrappers,
@@ -38,5 +45,3 @@ you added against the dictionary.
    and comparisons that ran, and any uncovered behavior. Always report other material
    codebase problems found in the inspected scope, with examples and effects. Use the
    [wording dictionary](../dictionary/wording.md).
-
-[fowler]: https://martinfowler.com/books/refactoring.html

@@ -19,14 +19,17 @@ you added against the dictionary.
    relevant official documentation, issue reports, or release notes when the cause
    depends on framework or dependency behavior. Do not replace the symptom with a
    fallback until you understand why it occurs.
-4. **Compare proven approaches.** For a substantive defect, study at least three
-   relevant sources, including mature, widely used products or libraries that solve the
-   same problem. Find out how their solutions work and what users or maintainers say
-   they get wrong. Adopt a proven approach when it fits this product. If you have
-   evidence for a better approach, check why those products may not use it: look for
-   different constraints, compatibility needs, costs, or user goals. Do not assume they
-   missed an obvious improvement. If you cannot establish their reason, say it is
-   unknown and explain the evidence for your choice.
+4. **Research and compare approaches.** For every fix, read at least three full,
+   relevant, peer-reviewed papers from established scholarly publishers or proceedings
+   (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
+   Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
+   press releases, AI-written summaries, abstracts, and search snippets do not count;
+   vendor documents may confirm vendor-specific facts. For each paper, record its
+   method, scope, finding, limitations, and relevance to the failure. Also inspect how
+   mature products solve it and what users or maintainers criticize. Check whether a
+   seemingly better approach fits this product's constraints. If three suitable full
+   papers cannot be read, report the gap and mark the research incomplete; do not pad it.
+   Three is a workflow minimum, not a research-established optimum.
 5. **Fix only the defect.** Make the smallest complete change that corrects the cause.
    Reuse the existing behavior where it fits. Do not add a parallel API, broad cleanup,
    or speculative fallback. If you find material bloat or a separate quality problem,

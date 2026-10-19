@@ -38,20 +38,20 @@ you added against the dictionary.
    implementation, pause that dependent work until they decide. After approval, use the
    matching workflow, such as REFACTOR for restructuring or FIX for a specific defect;
    then return to BUILD if feature work remains.
-4. **Research every build.** Read at least three distinct, relevant articles or primary
-   sources before implementation, even when the feature seems familiar. Use sources
-   such as authoritative documentation, standards, published research, and credible
-   implementation write-ups. For each one, record a concrete point that affects the
-   design or implementation; do not collect links as ceremony. Compare what you learn
-   with the current code and identify a weakness or a practice worth improving. Do not
-   copy a source without checking that it fits. If three useful sources cannot be found,
-   report the gap instead of inventing research. For user-facing design, also inspect
-   recognized or award-winning examples and identify a specific choice that fits this
-   need. First check how the repository expresses its visual identity and reuse its
-   colors, type, spacing, assets, and components when they fit. Do not invent a new
-   palette while suitable project choices exist. Use outside examples to improve the
-   product's design, not copy a whole page. An award is a source of ideas, not a promise
-   that a new design will win an award or fit this product.
+4. **Research every build.** Read at least three full, relevant, peer-reviewed papers
+   from established scholarly publishers or proceedings (such as Elsevier, Springer
+   Nature, Wiley, Taylor & Francis, IEEE, Oxford University Press, or ACM) or
+   peer-reviewed university research. Company guides, vendor blogs, press releases,
+   AI-written summaries, abstracts, and search snippets do not count. Vendor documents
+   may confirm vendor-specific facts. For each paper, record its method, scope, finding,
+   limitations, and what it changes in this implementation; compare it with the actual
+   code and do not treat results from other systems as proof about this one. If three
+   suitable full papers cannot be read, report the gap and mark the research incomplete;
+   do not pad the list. Three is a workflow minimum, not a research-established optimum.
+   For user-facing design, also inspect recognized or award-winning
+   examples and name the specific choice that fits. First check the repository's visual
+   identity and reuse its colors, type, spacing, assets, and components when they fit.
+   Awards and external examples are ideas, not proof of fit or a promise of an award.
 5. **Look for unmet needs.** Prefer direct user research, support feedback, product
    analytics, and observed behavior when available. Search Reddit, X, forums, or reviews
    for recurring complaints when that can inform the feature. Treat public posts as

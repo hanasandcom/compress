@@ -22,21 +22,28 @@ dictionary.
    dependencies, scope creep, and violations of useful project conventions. Check
    whether tests cover real failure modes and would fail if the behavior broke. Review
    available CI results; do not say tests passed unless you verified that result.
-4. **Use evidence.** Confirm concerns with a call path, input, test result, log, or
-   authoritative source. Google’s review guidance says to prioritize code health and
-   technical facts over personal preference ([standard of code review][google-review]).
-   Treat style-only preferences as non-blocking unless they violate project guidance.
-5. **Write actionable findings.** Put findings first, ordered by severity. For each,
+4. **Research the change.** Read at least three full, relevant, peer-reviewed papers
+   from established scholarly publishers or proceedings (such as Elsevier, Springer
+   Nature, Wiley, Taylor & Francis, IEEE, Oxford University Press, or ACM) or
+   peer-reviewed university research. Company guides, vendor blogs, press releases,
+   AI-written summaries, abstracts, and search snippets do not count; vendor documents
+   may confirm vendor-specific facts. Record each paper's method, scope, finding,
+   limitations, and relevance to the changed code. Compare research with the diff and
+   actual repository evidence. If three suitable full papers cannot be read, report the
+   gap and mark the research incomplete; do not pad it. Three is a workflow minimum,
+   not a research-established optimum.
+5. **Use evidence.** Confirm concerns with a call path, input, test result, log, or
+   research evidence. Treat style-only preferences as non-blocking unless they violate
+   project guidance.
+6. **Write actionable findings.** Put findings first, ordered by severity. For each,
    give a precise file and line, the condition that triggers it, and its effect. Do not
    report guesses as defects. If there are no findings, say what you inspected and what
    checks you could verify; do not give blanket approval based on a narrow view.
-6. **Flag codebase problems.** Always report material bloat, duplication, or poor
+7. **Flag codebase problems.** Always report material bloat, duplication, or poor
    practices found in the inspected area, even outside the change. Give examples and
    explain their effect. Do not expand the review into a cleanup; ask whether the user
    wants a separate FIX, REMOVE, or REFACTOR task.
-7. **Keep the boundary.** Do not edit, commit, push, or deploy during a review. If the
+8. **Keep the boundary.** Do not edit, commit, push, or deploy during a review. If the
    user asks you to address findings, switch to the matching change workflow.
-8. **Write plainly.** Use the [wording dictionary](../dictionary/wording.md). Avoid
+9. **Write plainly.** Use the [wording dictionary](../dictionary/wording.md). Avoid
    padded praise, generic approval, and unsupported claims.
-
-[google-review]: https://google.github.io/eng-practices/review/reviewer/standard.html

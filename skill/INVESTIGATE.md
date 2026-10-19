@@ -14,14 +14,18 @@ dictionary.
    systems or time period in scope. If the question is answerable, begin; do not
    widen it into an audit or implementation plan.
 2. **Find direct evidence.** Inspect relevant code, configuration, history, tests, logs,
-   analytics, documentation, and actual runtime behavior where access permits. Trace the
-   Trace claims that an API works or nobody uses it. Search finds code references but
+   analytics, documentation, and actual runtime behavior where access permits. Trace
+   claims that an API works or nobody uses it. Search finds code references but
    cannot prove production use or rule out external callers.
-3. **Research external claims.** When the answer depends on standards, current behavior,
-   or accepted practice, check primary documentation and relevant published research.
-   For a consequential or disputed claim, compare at least three relevant sources.
-   Record what each supports and where sources disagree. Do not use search snippets as
-   proof.
+3. **Research the question.** For every investigation, read at least three full,
+   relevant, peer-reviewed papers from established scholarly publishers or proceedings
+   (such as Elsevier, Springer Nature, Wiley, Taylor & Francis, IEEE, Oxford University
+   Press, or ACM) or peer-reviewed university research. Company guides, vendor blogs,
+   press releases, AI-written summaries, abstracts, and search snippets do not count;
+   vendor documents may confirm vendor-specific facts. Record each paper's method,
+   scope, finding, limitations, and relevance to this question. If three suitable full
+   papers cannot be read, report the gap and mark the research incomplete; do not pad it.
+   Three is a workflow minimum, not a research-established optimum.
 4. **Separate evidence from inference.** Label what is confirmed, what is likely, and
    what remains unknown. For usage claims, give the data source and period; distinguish
    zero recorded traffic from missing or incomplete telemetry. Do not invent results or
