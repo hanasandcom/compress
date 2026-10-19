@@ -23,6 +23,7 @@ blacklists. The goal is to say what happened, what evidence supports it, and wha
 | Generic next step with missing context | Review for relevance to the selected actor or company. | Open [source] and check whether [company] is already on [watchlist]; close it if it duplicates [claim ID]. |
 | Declaring the whole task done from one check | Verified; all fixed. | The empty-size fallback now reads “Size unavailable” in the activity feed and detail view; the FAQ and API output still need review. |
 | Handoff that drops evidence | The feature is blocked. | The parser returns no size for [record ID]; I checked [source URL] and found no size claim. The other [N] records were not reviewed. |
+| Dense jargon where a concrete result is clearer | Rising verbosity and structural erosion over iterative code-agent trajectories. | In these repeated coding tasks, agents added duplicate code and made some functions more complex. |
 
 ## Check before sending
 
@@ -46,7 +47,7 @@ PNAS research found people’s intuitions about AI-written language were unrelia
 these examples are writing guidance, not an AI detector. [Study](https://www.pnas.org/doi/10.1073/pnas.2208839120).
 These studies justify checking for repetition and prompt-shaped templates in their
 contexts; they do not prove that the examples above are exclusive to AI writing.
-SlopCodeBench reports rising verbosity and structural erosion over iterative code-agent
-trajectories, including GPT and Claude models. It is a 2026 preprint using 36 Python tasks,
+SlopCodeBench reports that agents produced more verbose code and more complex functions
+over repeated attempts in its tested tasks. It is a 2026 preprint using 36 Python tasks,
 so treat it as an early signal, not settled evidence or a measure of Hanasand.
 [Preprint](https://arxiv.org/abs/2603.24755).

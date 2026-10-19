@@ -10,7 +10,7 @@ Compress provides separate instructions for common software tasks. It is a set o
    dictionary](dictionary/wording.md) plus [AI writing habits](dictionary/habits.md)
    when the agent writes prose. If the agent cannot
    access this repository, include those references with the task.
-3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, authorized actions, and access to evidence the decision depends on, such as production usage data for an API audit. Mark facts the agent cannot verify as unknown.
+3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, and actions already authorized. Provide available evidence, such as production usage data for an API audit. If data is missing, mark only the related claim as unknown and continue the product-value assessment from its purpose, working behavior, outputs, and other available evidence.
 4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
@@ -103,8 +103,11 @@ to maximize the number of workers.
 The user can redirect, pause, resume, or cancel active work. Follow
 [Session Control](skill/SESSION_CONTROL.md) for the shared rules on context, authority,
 approval, status, cancellation, verification, and handoff. A workflow grants no new
-permission. Preserve durable user authorization that still applies; otherwise ask
-before an external, destructive, or production action.
+permission. A request to build, fix, refactor, or remove authorizes ordinary repository
+changes within its scope, including deleting local files that need to change or exist
+only for the requested removal. Do not ask again for those steps. Preserve durable user
+authorization that still applies; ask only before external actions, production changes,
+or work outside the stated scope that the user has not authorized.
 
 ## Evaluate the workflows
 
