@@ -26,6 +26,12 @@ what is missing, and what could improve it. Assess candidate methods such as NLP
 bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
 conclusions to paper methods, scope, limits, and evidence from this product.
 
+Apply research, do not just cite it. For each paper, carry forward its method, scope,
+finding, limitation, and the local question or check it suggests. Keep a concise shared
+note across workflow handoffs instead of repeating source text. Tests show only whether
+covered behavior passes; also inspect reuse, completeness, readability, and operating
+cost.
+
 ## Workflow
 
 1. **Define the failure.** Record what should happen, what happens instead, who or what

@@ -29,6 +29,26 @@ what is missing, and what could improve it. Assess candidate methods such as NLP
 bag-of-words for fit and limits; their use elsewhere is not proof they belong here. Tie
 conclusions to paper methods, scope, limits, and evidence from this product.
 
+Apply research, do not just cite it. For each paper, carry forward its method, scope,
+finding, limitation, and the local question or check it suggests. Keep a concise shared
+note across workflow handoffs instead of repeating source text. Tests show only whether
+covered behavior passes; also inspect reuse, completeness, readability, and operating
+cost.
+
+## Why the workflow uses research
+
+The source findings have limits. SWE-bench uses issues from 12 Python repositories and
+tests both requested fixes and regressions; its authors caution that passing tests alone
+does not guarantee comprehensive, efficient, or readable code. Instruction Induction
+studies 24 mostly simple language tasks and reports prompt and model sensitivity, so it
+does not validate software workflow instructions. Chen et al. study in-context examples
+on benchmark tasks and find that extra examples can add little or interfere; that does
+not prove that papers or repository context should be minimized. Together, these
+findings support relevant context, explicit checks, and separate code quality review.
+[SWE-bench](https://proceedings.iclr.cc/paper_files/paper/2024/file/edac78c3e300629acfe6cbe9ca88fb84-Paper-Conference.pdf),
+[Instruction Induction](https://aclanthology.org/2023.acl-long.108.pdf),
+[Chen et al.](https://aclanthology.org/2023.findings-emnlp.745.pdf).
+
 ## Workflows
 
 - [Build](skill/BUILD.md) — add or extend a requested capability.
