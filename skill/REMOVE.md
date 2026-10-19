@@ -9,8 +9,11 @@ examples only when they fit the facts; do not mechanically replace words or load
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
-When changing workflow guidance, inspect all seven workflow files for the same issue
-and update every file where the change applies; workflows may be loaded by themselves.
+Search related files and product surfaces for the same issue, not just the reported
+example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
+relevant product scope and verify none remain; if one cannot be fixed, state which and
+why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
+without changing files.
 
 ## Workflow
 
