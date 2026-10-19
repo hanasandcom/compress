@@ -3,6 +3,32 @@
 Use this workflow to add a requested capability or extend an existing one. Build only
 the smallest complete change that serves a real, stated purpose.
 
+## Route and plan the work
+
+For every request, assess whether independent parts of this same goal can finish sooner
+in parallel, or whether several independent requested outcomes call for multitasking.
+Follow [PARALLELIZATION](PARALLELIZATION.md) or [MULTITASKING](MULTITASKING.md) when
+useful: use subagents first, and use additional agents only after all four subagent
+slots are occupied and actual platform capacity permits it. Keep a coordinator
+responsible for integration and whole-product checks; assign clear ownership to avoid
+conflicting edits. If delegation will save time, delegate instead of merely suggesting
+it. Do not split coupled work just to increase agent count.
+
+Before implementation, make a plan scaled to the change. State the user need and value,
+where the capability fits the product journey, and why someone would spend time on it.
+Explain business or monetization value only when relevant and supported; do not invent
+a revenue case. For games, name the core play loop and how the feature supports a
+reason to play. For a complex product or a change spanning components or affecting
+domain behavior, data, or operations, map the main architecture and data flow, contracts,
+state, failure paths, and operational effects before choosing an implementation. Check
+that planned capabilities support the same product purpose or solve a clear separate
+need; do not accumulate disconnected features. Always flag an incoherent product
+structure or a feature with no supported user value, using concrete examples and effects.
+For feed or recommendation work, assess relevance, variety, user control, unwanted
+content, and user outcomes; time spent or engagement alone does not establish user value.
+Treat research findings within their actual methods and limits, not as proof that a
+design will work here.
+
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
 section of the [wording dictionary](../dictionary/wording.md). Apply its natural
 examples only when they fit the facts; do not mechanically replace words or load all

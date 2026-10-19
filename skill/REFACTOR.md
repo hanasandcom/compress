@@ -8,6 +8,29 @@ examples only when they fit the facts; do not mechanically replace words or load
 164 pairs when one section answers the question. Check the final report and any prose
 you added against the dictionary.
 
+## Choose the work pattern
+
+For every request, assess whether independent parts of this refactor can finish
+faster in parallel, or whether separate requested outcomes merit multitasking.
+Follow [Parallelization](PARALLELIZATION.md) for workers on one refactor and
+[Multitasking](MULTITASKING.md) for separate requested work. Prefer subagents;
+use additional agents only after all four subagent slots are occupied, subject to
+actual platform capacity. Keep one coordinator responsible for shared contracts,
+integration, and final checks; assign non-overlapping files or work areas to avoid
+conflicts. If delegation will save time, delegate instead of merely suggesting it.
+
+## Check product fit and architecture
+
+Before a broad refactor, map the current and intended user journey and product core
+loop: why users spend time here, what user or business value the structure
+supports, and whether a relevant monetization model depends on it. Do not invent a
+revenue case when monetization is irrelevant. For games, preserve or improve the
+reason to play and core play loop; do not turn the refactor into a bundle of
+disconnected features. For feed or recommendation behavior, consider user outcomes,
+control, relevance, diversity, and tradeoffs; time spent or engagement alone is not
+user value. Scale the plan to the change, but before broad work map affected domain
+boundaries, data flow, contracts, state, failure behavior, and operational effects.
+
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and

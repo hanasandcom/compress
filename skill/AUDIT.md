@@ -3,6 +3,16 @@
 Assess what a system contains, what people use, what works, and what it costs to keep.
 Do not change code during an audit.
 
+## Choose the work pattern
+
+For every request, assess whether independent parts can finish sooner through
+[parallelization](PARALLELIZATION.md), or whether separate requested outcomes call for
+[multitasking](MULTITASKING.md). Use subagents first; use additional agents only after
+all four subagent slots are occupied and only when the platform has capacity. Keep one
+coordinator responsible for integrating evidence, resolving conflicts, and reporting
+the whole result; assign non-overlapping scopes to avoid file conflicts. If delegation
+will save time, delegate instead of merely suggesting it.
+
 Before writing user-facing or maintainer-facing prose, consult the matching section of
 the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
@@ -31,6 +41,14 @@ finding, limitation, and the local question or check it suggests. Keep a concise
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
 cost.
+
+Assess product and architecture coherence in the audited scope. Trace the user journey
+or, for a game, its core play loop and reason to return; connect each major component to
+a user need and product or business value. Discuss monetization only where it applies.
+Map component boundaries, data flow, contracts, and state transitions, and report
+disconnected features or missing architectural structure with evidence. For feeds or
+recommendations, assess user benefit, user control, diversity, and tradeoffs; engagement
+or time spent alone is not evidence of value. Keep this assessment read-only.
 
 ## Workflow
 

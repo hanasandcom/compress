@@ -2,6 +2,28 @@
 
 Correct a specific defect with the smallest change that addresses its cause.
 
+## Route and plan the work
+
+For every request, assess whether independent parts of this same goal can finish sooner
+in parallel, or whether several independent requested outcomes call for multitasking.
+Follow [PARALLELIZATION](PARALLELIZATION.md) or [MULTITASKING](MULTITASKING.md) when
+useful: use subagents first, and use additional agents only after all four subagent
+slots are occupied and actual platform capacity permits it. Keep a coordinator
+responsible for integration and whole-product checks; assign clear ownership to avoid
+conflicting edits. If delegation will save time, delegate instead of merely suggesting
+it. Do not split coupled work just to increase agent count.
+
+Before fixing, plan at a scale that fits the defect. Explain the affected user's need,
+the fix's value and place in the product journey, and why the user would spend time on
+that path. Explain business or monetization value only when relevant and supported; do
+not invent a revenue case. For games, check whether the defect breaks the core play
+loop or reason to play. If the cause or correction crosses components or affects
+domain behavior, data, or operations, map architecture and data flow, contracts, state,
+failure paths, and operational effects before editing. For feed or recommendation
+defects, consider relevance, variety, user control, unwanted content, and user
+outcomes; engagement or time spent alone does not establish user value. Apply research
+within its actual scope and limits, not as proof that a fix will work here.
+
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
 section of the [wording dictionary](../dictionary/wording.md). Apply its natural
 examples only when they fit the facts; do not mechanically replace words or load all

@@ -3,6 +3,16 @@
 Check whether a proposed change does what it claims, fits the system, and improves the
 codebase without adding avoidable risk. Review the change; do not implement it.
 
+## Choose the work pattern
+
+For every request, assess whether independent parts can finish sooner through
+[parallelization](PARALLELIZATION.md), or whether separate requested outcomes call for
+[multitasking](MULTITASKING.md). Use subagents first; use additional agents only after
+all four subagent slots are occupied and only when the platform has capacity. Keep one
+coordinator responsible for integrating evidence, resolving conflicts, and reporting
+the whole result; assign non-overlapping scopes to avoid file conflicts. If delegation
+will save time, delegate instead of merely suggesting it.
+
 Before writing user-facing or maintainer-facing prose, consult the matching section of
 the [wording dictionary](../dictionary/wording.md). Apply its natural examples only
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
@@ -32,6 +42,14 @@ finding, limitation, and the local question or check it suggests. Keep a concise
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
 cost.
+
+Assess coherence where the change touches it: trace affected component boundaries,
+data flow, contracts, and state, then check whether the change supports the product's
+user journey and business value. For a game, check its core play loop and why players
+would return; discuss monetization only where it applies. For feeds or recommendations,
+consider user benefit and control, diversity, and tradeoffs; engagement or time spent
+alone does not establish value. Keep the review read-only and tie concerns to inspected
+code or product evidence.
 
 ## Workflow
 
