@@ -80,9 +80,11 @@ the smallest complete change that serves a real, stated purpose.
    not prove the feature is useful or usable.
 10. **Commit, push everywhere, test in staging, then redeploy.** After local checks
    pass, commit the change. List every configured remote and its push URLs, then push
-   the branch to every remote; do not assume `origin` is the only destination. Verify
-   that each destination has the new commit. If any push or verification fails, report
-   it and stop before staging tests or redeployment. For a deployable app or service,
+   the branch to every remote; do not assume `origin` is the only destination. Use SSH
+   URLs for repository pushes when available; do not fall back to HTTPS when SSH is
+   configured. Verify that each destination has the new commit. If any push or
+   verification fails, report it and stop before staging tests or redeployment. For a
+   deployable app or service,
    run the project's server-side tests in staging and redeploy only after they pass.
    Inspect the existing deployment instructions and use the established commands and
    checks. Always use staging before production. If staging does not exist, ask the user
