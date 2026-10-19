@@ -5,9 +5,9 @@ Compress provides separate instructions for common software tasks. It is a set o
 ## How to use it
 
 1. Choose the workflow that matches the task.
-2. Provide the agent with that workflow file and your concrete request.
-3. Include the target repository, relevant constraints, and access to evidence the decision depends on, such as production usage data for an API audit.
-4. Load another workflow only if the task genuinely crosses into it. Do not load every workflow as standing context.
+2. Provide the workflow and its linked shared references: [session control](skill/SESSION_CONTROL.md), plus the relevant part of the [wording dictionary](dictionary/wording.md) when the agent writes prose. If the agent cannot access this repository, include those references with the task.
+3. Include the target repository, latest user direction, relevant project instructions, current branch/revision, constraints, authorized actions, and access to evidence the decision depends on, such as production usage data for an API audit. Mark facts the agent cannot verify as unknown.
+4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
@@ -17,7 +17,10 @@ relevant product scope and verify none remain; if one cannot be fixed, state whi
 why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
 without changing files. Treat confirmed repetitions of the same underlying problem in
 related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope.
+problems outside that scope. Define scope by the affected product journey and its
+dependencies, not by repository boundaries alone. If a fix crosses into a separate
+product or independently owned service, report the boundary and establish authority
+before changing it.
 
 Research is required. In chained work, choose one shared set of N relevant full,
 peer-reviewed papers for the whole task (N must be at least three); carry findings
@@ -33,7 +36,12 @@ Apply research, do not just cite it. For each paper, carry forward its method, s
 finding, limitation, and the local question or check it suggests. Keep a concise shared
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost.
+cost. Choose papers to answer named decisions. The three-paper minimum applies to the
+whole task chain, not to each worker or workflow; use the same set across the chain and
+add another paper only for a material unanswered question. Do not pad the set with
+loosely related papers. If three relevant full papers cannot be found or read, state the
+gap and the decision it leaves unresolved. Track research effort during workflow
+evaluation; do not claim the minimum improves results without comparing outcomes.
 
 ## Why the workflow uses research
 
@@ -98,6 +106,27 @@ when delegation will save time, do it rather than only recommending it. The coor
 integrates the work and checks the whole result. Do not split tightly coupled files just
 to maximize the number of workers.
 
+## Control work and permissions
+
+The user can redirect, pause, resume, or cancel active work. Follow
+[Session Control](skill/SESSION_CONTROL.md) for the shared rules on context, authority,
+approval, status, cancellation, verification, and handoff. A workflow grants no new
+permission. Preserve durable user authorization that still applies; otherwise ask
+before an external, destructive, or production action.
+
+## Evaluate the workflows
+
+These instructions are proposals until they improve real work. Keep the previous
+version and compare it with the revision on a small set of representative tasks: a
+feature, a defect, a cross-component change, and an audit or handoff. Hold the tasks,
+acceptance conditions, and available checks steady. Record task completion and
+correctness, regressions, confirmed duplicate or dead work, rework, elapsed time
+including coordination and research, number of human interventions, and loaded context
+when observable. Judge code value from reviewed behavior and user need, not line counts.
+Report missing measurements and tradeoffs. Keep, revise, or remove a rule based on the
+comparison; a paper citation or one successful task does not show that this workflow
+helped.
+
 ## Workflows
 
 - [Build](skill/BUILD.md) — add or extend a requested capability.
@@ -109,3 +138,4 @@ to maximize the number of workers.
 - [Investigate](skill/INVESTIGATE.md) — answer a question without changing code.
 - [Parallelization](skill/PARALLELIZATION.md) — divide one coherent goal into independent work.
 - [Multitasking](skill/MULTITASKING.md) — assign separate requested outcomes to separate owners.
+- [Session Control](skill/SESSION_CONTROL.md) — keep the user in control across active work, decisions, and handoffs.

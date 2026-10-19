@@ -1,47 +1,82 @@
 # Parallelization
 
-Use this workflow when one coherent outcome can be reached sooner by dividing its
-research, implementation, or review into independent pieces. Every task workflow must
-assess whether this would save time, then use this workflow when it would. If delegation
-will save time, delegate instead of merely proposing that someone do it.
+Use this workflow when one outcome can be delivered sooner by assigning independent
+parts of that outcome to multiple agents. The goal is shorter time to a correct,
+integrated result, not fewer agents. When there is enough independent work, use the
+available capacity; do not leave useful workers idle to save agent count.
 
-## Decide what to split
+Follow [Session Control](SESSION_CONTROL.md) throughout. The human remains in charge of
+scope, permissions, and whether work continues. Parallel work does not grant authority
+to any agent.
 
-1. State the shared outcome, user value, acceptance conditions, and the smallest plan
-   that shows architecture, data flow, interfaces, dependencies, and sequence.
-2. Find independent questions or slices of work. Assign one owner to each independent
-   deliverable or file when file ownership is genuinely independent. For example, seven
-   independent file changes can go to seven workers when capacity permits; with four,
-   divide the files into balanced groups. Do not split tightly coupled changes by file
-   if they need one owner to keep contracts consistent.
-3. Start subagents first. Use up to four subagent slots where the platform allows. Do
-   not add peer or other additional agents until all four subagent slots are occupied;
-   then use additional agents only if the platform permits and the saved time is worth
-   the coordination cost. Respect the actual capacity available in the current session.
-4. Give each worker the same outcome and relevant context, plus a distinct question or
-   owned surface, required evidence, dependencies, and a concrete result to return.
-   Agree on shared interfaces before parallel edits. Avoid concurrent writes to the same
-   file; use the platform's isolation support when available.
-5. Keep research shared across the task chain. The lead records a concise note with
-   each paper's method, scope, finding, limitation, and the local decision or check it
-   informs. Workers use this note instead of independently repeating the same research.
-6. The lead integrates every result, checks cross-cutting behavior and the whole
-   product, resolves conflicts, and verifies the acceptance conditions. Delegation does
-   not transfer responsibility for the final result.
+## 1. Build the shared task brief
 
-## Choose the right split
+Before dispatch, give the workers one concise, current brief containing:
 
-Parallelize independent implementation slices, research questions, or reviews of one
-shared goal. If the user requested several separate outcomes, use
-[Multitasking](MULTITASKING.md) and assign an owner to each outcome. A task can use both
-workflows when it has several independent outcomes and each outcome also has separable
-work.
+- The user's requested outcome and latest corrections, plus what is in and out of scope.
+- The target repository, branch or worktree, base revision, active owners, and relevant
+  project instructions.
+- The user or product outcome, acceptance conditions, architecture, existing behavior,
+  shared interfaces, and dependencies that matter to the split.
+- The shared research note: each source's method, scope, finding, limitation, and the
+  decision or local check it informs. Research is shared across the task, not repeated
+  once per worker.
+- Available checks, evidence sources, authorized actions, and any decision that must
+  wait for the user.
 
-Do not parallelize a tiny change, sequential dependency, or tightly coupled design when
-coordination is likely to take longer than the saved work. For a coupled implementation,
-parallelize research or independent review instead. More workers do not guarantee a
-faster or better result.
+Give each worker the relevant sources and paths, not the entire conversation or a pile
+of unrelated project files. Mark unverified facts as unknown. Update the brief when the
+user redirects the work or evidence changes an interface, dependency, or acceptance
+condition. See [Session Control](SESSION_CONTROL.md) for authority and live-state rules.
+
+## 2. Split for throughput
+
+1. Map the work into independent deliverables, questions, components, or files. Identify
+   the critical path and which work can start at the same time. Estimate elapsed time to
+   an integrated, verified result with the proposed split and with the available
+   sequential alternative; include dispatch, context setup, waits, integration, and
+   whole-result checks. Use the split expected to finish sooner without sacrificing
+   correctness. Compare the estimate with actual coordination time and rework.
+2. Assign one owner to each independent deliverable. If seven files can be changed
+   independently, use seven agents when capacity allows. If four agents are available,
+   assign two files to three agents and one file to the fourth; if two are available,
+   assign three files to one and four to the other. Use a different split when shared
+   interfaces or dependencies make a component grouping faster or safer.
+3. Start subagents first. Use up to four subagent slots where the platform allows. Use
+   additional agents only after all four subagent slots are occupied, if independent
+   work remains and the platform supports more agents. If the platform provides fewer
+   than four subagent slots, use the available subagent capacity; do not substitute
+   additional agents for slots the platform does not provide. The active platform
+   limit always applies.
+4. Give every worker the same goal and brief, then specify its owned deliverable, files
+   or question, dependencies, interface contract, acceptance checks, and expected
+   evidence. Ask agents to return early when they find a conflict or changed
+   dependency; reassign the work before parallel edits collide.
+5. Start independent work promptly. Track owners and status in a small task list so the
+   coordinator can see what is active, waiting, blocked, finished, or needs review.
+   Do not create a new registry or status report when the app's task view already shows
+   it.
+
+## 3. Integrate and verify the whole result
+
+Each worker reports the files or artifacts changed, exact revision, checks actually
+run, results, assumptions, and unresolved issues. The coordinator integrates each
+result, resolves shared-contract conflicts, and checks the combined behavior against
+the original acceptance conditions. Review worker claims against the actual change;
+do not treat a confident summary or a passing test as proof of completeness or quality.
+Run the checks that apply to the combined result, then report what was not verified.
+
+Use one owner per shared file. If agents have isolated worktrees, integrate their
+changes explicitly before final checks. Do not let agents independently publish,
+deploy, alter shared runtime state, or contact others without authorization for that
+action. Pause, redirect, or cancel work as the user directs; see
+[Session Control](SESSION_CONTROL.md).
+
+Parallelization and [Multitasking](MULTITASKING.md) can be combined: multitasking
+separates user-requested outcomes; parallelization divides independent work within one
+outcome. When work is genuinely sequential, assign it in dependency order while keeping
+other independent work moving. Do not reduce agent count as an end in itself, and do not
+create artificial work just to fill slots.
 
 Before writing user-facing or maintainer-facing prose, consult the relevant section of
-the [wording dictionary](../dictionary/wording.md). Report who owned each slice, what
-was integrated, what the lead checked, and any part that could not be verified.
+the [wording dictionary](../dictionary/wording.md). Keep the handoff factual and concise.

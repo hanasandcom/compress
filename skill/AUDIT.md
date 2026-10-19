@@ -3,6 +3,10 @@
 Assess what a system contains, what people use, what works, and what it costs to keep.
 Do not change code during an audit.
 
+Follow [Session Control](SESSION_CONTROL.md) for user direction, authority, pause,
+resumption, and handoff. An audit remains read-only; it does not authorize access to
+production data or external systems beyond the user's permissions.
+
 ## Choose the work pattern
 
 For every request, assess whether independent parts can finish sooner through
@@ -40,7 +44,11 @@ Apply research, do not just cite it. For each paper, carry forward its method, s
 finding, limitation, and the local question or check it suggests. Keep a concise shared
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost.
+cost. The research set must answer named decisions in this task: do not count papers
+that are only loosely related. The minimum of three applies once across the whole
+task chain, not once per worker or workflow. Track research time and report when the
+cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
+claim the rule improved results until representative outcomes have been compared.
 
 Assess product and architecture coherence in the audited scope. Trace the user journey
 or, for a game, its core play loop and reason to return; connect each major component to

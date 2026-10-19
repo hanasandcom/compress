@@ -3,6 +3,10 @@
 Use this workflow to add a requested capability or extend an existing one. Build only
 the smallest complete change that serves a real, stated purpose.
 
+The user controls scope and live work. Follow [SESSION_CONTROL](SESSION_CONTROL.md) for
+current context, authority, user steering, approvals, session status, verification, and
+handoff. This workflow does not grant permission to publish or affect production.
+
 ## Route and plan the work
 
 For every request, assess whether independent parts of this same goal can finish sooner
@@ -57,7 +61,11 @@ Apply research, do not just cite it. For each paper, carry forward its method, s
 finding, limitation, and the local question or check it suggests. Keep a concise shared
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost.
+cost. The research set must answer named decisions in this task: do not count papers
+that are only loosely related. The minimum of three applies once across the whole
+task chain, not once per worker or workflow. Track research time and report when the
+cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
+claim the rule improved results until representative outcomes have been compared.
 
 ## Workflow
 
@@ -113,8 +121,11 @@ cost.
 6. **Check project practices.** Read the relevant local code and project guidance.
    Follow useful conventions; do not preserve a weak pattern just because many files
    use it. Use research and nearby code to check naming, formatting,
-   accessibility, security, and error handling. Improve a relevant weakness without
-   turning the task into unrelated cleanup. Reuse a dependency or helper when it fits;
+   accessibility, security, and error handling. When a change touches authentication,
+   credentials, personal data, untrusted input, external integrations, deletion, or
+   retention, trace the relevant security and privacy boundary and check its failure
+   paths. Improve a relevant weakness without turning the task into unrelated cleanup.
+   Reuse a dependency or helper when it fits;
    avoid a new dependency, layer, configuration option, fallback, or public API unless
    the outcome requires it.
 7. **Write like a person.** Use the project's voice and the wording pairs in the
@@ -136,8 +147,12 @@ cost.
    Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
    drift, and accidental changes. Fix failures before committing. Passing tests alone
    do not prove the feature is useful or usable.
-10. **Commit, push everywhere, test in staging, then redeploy.** After local checks
-   pass, commit the change. List every configured remote and its push URLs, then push
+10. **Commit, push everywhere, test in staging, then redeploy.** Before release,
+   check the current user authorization and project policy for the exact branch,
+   remotes, environment, and action. Preserve standing user authorization that still
+   covers this change; the workflow text alone grants no permission. If authorization
+   is missing, pause that release action and ask. After local checks pass, commit the
+   change. List every configured remote and its push URLs, then push
    the branch to every remote; do not assume `origin` is the only destination. Use SSH
    URLs for repository pushes when available; do not fall back to HTTPS when SSH is
    configured. Verify that each destination has the new commit. If any push or
@@ -157,7 +172,10 @@ cost.
    inspected scope with concrete examples and effects. If you found no material issue,
    name the scope inspected rather
    than claiming the whole repository is clean. State unknowns and unverified
-   assumptions.
+   assumptions. For a user-facing product change, name an appropriate post-release
+   signal and review point when the project can measure it; distinguish user value from
+   raw engagement. Do not claim improvement until the result is measured against a
+   baseline or comparison.
    Never imply that a search, test, analytics check, or design review happened if it did
    not.
 

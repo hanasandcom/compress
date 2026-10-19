@@ -3,6 +3,10 @@
 Retire a capability and the code that exists only to support it, without breaking
 behavior users still rely on.
 
+Follow [Session Control](SESSION_CONTROL.md) for user direction, authorization,
+pauses, approvals, verification, and handoff. A removal request does not authorize
+destructive or external actions beyond its stated scope.
+
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
 section of the [wording dictionary](../dictionary/wording.md). Apply its natural
 examples only when they fit the facts; do not mechanically replace words or load all
@@ -54,7 +58,11 @@ Apply research, do not just cite it. For each paper, carry forward its method, s
 finding, limitation, and the local question or check it suggests. Keep a concise shared
 note across workflow handoffs instead of repeating source text. Tests show only whether
 covered behavior passes; also inspect reuse, completeness, readability, and operating
-cost.
+cost. The research set must answer named decisions in this task: do not count papers
+that are only loosely related. The minimum of three applies once across the whole
+task chain, not once per worker or workflow. Track research time and report when the
+cost, lack of suitable full papers, or weak fit leaves a decision unresolved; do not
+claim the rule improved results until representative outcomes have been compared.
 
 ## Workflow
 
