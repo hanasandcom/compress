@@ -11,6 +11,10 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
+Each workflow repeats its required research standard and wording-dictionary check so it
+works when loaded by itself. Keep those requirements in all seven files. After changing
+workflow instructions, run `python3 scripts/check_workflows.py` to catch omissions.
+
 ## Workflows
 
 - [Build](skill/BUILD.md) — add or extend a requested capability.

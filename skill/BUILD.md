@@ -82,8 +82,10 @@ you added against the dictionary.
    including important success, empty, error, and edge states. Run the project's focused
    checks and tests locally; inspect UI, keyboard use, and accessibility where relevant.
    Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
-   drift, and accidental changes. Fix failures before committing. Passing tests alone do
-   not prove the feature is useful or usable.
+   drift, and accidental changes. When editing workflow instructions, update shared
+   requirements in all seven files and run `python3 scripts/check_workflows.py`. Fix
+   failures before committing. Passing tests alone do not prove the feature is useful
+   or usable.
 10. **Commit, push everywhere, test in staging, then redeploy.** After local checks
    pass, commit the change. List every configured remote and its push URLs, then push
    the branch to every remote; do not assume `origin` is the only destination. Use SSH

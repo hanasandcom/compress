@@ -29,8 +29,8 @@ one section answers the question. Check the final report against the dictionary.
 5. **Read research.** For every audit, read at least three full, relevant, peer-reviewed
    research papers. Prefer empirical studies from established scholarly publishers or
    conference proceedings, such as Elsevier, Springer Nature, Wiley, Taylor & Francis,
-   IEEE, Oxford University Press, or ACM, and research published by universities. Do
-   not count corporate style guides, vendor blogs, press releases, AI-written summaries,
+   IEEE, Oxford University Press, or ACM, or peer-reviewed university research. Do not
+   count corporate style guides, vendor blogs, press releases, AI-written summaries,
    abstracts alone, or search snippets toward the three papers. Vendor documentation may
    confirm vendor-specific behavior, but it does not replace research. For each paper,
    record its method, scope, main finding, limitations, and how it changes or tests the
