@@ -8,6 +8,9 @@ the [wording dictionary](../dictionary/wording.md). Apply its natural examples o
 when they fit the facts; do not mechanically replace words or load all 164 pairs when
 one section answers the question. Check the final report against the dictionary.
 
+When changing workflow guidance, inspect all seven workflow files for the same issue
+and update every file where the change applies; workflows may be loaded by themselves.
+
 ## Workflow
 
 1. **Set the boundary.** Name the product areas, APIs, services, or time period in

@@ -8,6 +8,9 @@ when they fit the facts; do not mechanically replace words or load all 164 pairs
 one section answers the question. Check the answer and final report against the
 dictionary.
 
+When changing workflow guidance, inspect all seven workflow files for the same issue
+and update every file where the change applies; workflows may be loaded by themselves.
+
 ## Workflow
 
 1. **Pin down the question.** State the decision the answer should support and the

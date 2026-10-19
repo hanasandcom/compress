@@ -11,9 +11,9 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
-Each workflow repeats its required research standard and wording-dictionary check so it
-works when loaded by itself. Keep those requirements in all seven files. After changing
-workflow instructions, run `python3 scripts/check_workflows.py` to catch omissions.
+Each workflow carries the shared research and wording rules because it may be loaded by
+itself. When changing a workflow rule, inspect all seven files and update every one
+where the same issue applies.
 
 ## Workflows
 
