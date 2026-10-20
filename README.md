@@ -143,6 +143,21 @@ platform approval gates. Follow the workflow's staging and production sequence. 
 read-only AUDIT and REVIEW tasks that produce no code changes, report findings without
 creating a commit.
 
+### Release completion invariant
+
+A pushed feature branch is still unfinished work. For code changes, integrate the
+reviewed commit into the repository's documented integration branch (normally
+`main`, unless the user or project specifies another target), push that branch to
+every configured remote, complete the required staging checks, and redeploy the
+affected production service through its established deployment target. Verify the
+deployed revision, service health, and a relevant safe behavior after deployment;
+a successful merge, CI run, or deploy command alone does not establish that the
+change is live. Do not report the task complete until these steps are confirmed.
+If a required step cannot run because its target or access is unavailable, keep
+the task active or waiting on that specific dependency, finish independent work,
+and report the exact check and access needed. Do not treat a pushed branch or an
+unverified deployment as completion.
+
 ## Commit messages
 
 Write a concise commit subject that names the change and affected area. Use a
