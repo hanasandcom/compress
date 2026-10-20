@@ -7,6 +7,10 @@ Follow [Session Control](SESSION_CONTROL.md) for user direction, authority, paus
 resumption, and handoff. An audit remains read-only; it does not authorize access to
 production data or external systems beyond the user's permissions.
 
+Apply the mandatory [quality scan](QUALITY_SCAN.md) as a read-only check. Include
+README accuracy, naming, and maintainability findings in the inspected scope, with
+concrete examples and effects.
+
 ## Choose the work pattern
 
 For every request, assess whether independent parts can finish sooner through
@@ -26,8 +30,7 @@ one section answers the question. Check the final report against the dictionary.
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
+why. AUDIT and REVIEW report findings without changing files. Treat confirmed repetitions of the same underlying problem in
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 
@@ -63,17 +66,16 @@ support and from ceremonial or disconnected surfaces.
 
 When the user assigns ongoing responsibility for a project, or asks whether it is
 clean, healthy, or production-ready, establish this baseline before narrower follow-up
-work. Inspect the root README and representative code paths; compare languages and
-conventions with the user's related repositories when available, and explain any real
-compatibility or maintenance cost. Review structure, module boundaries, dependencies,
-duplicate or dead paths, error handling, security-sensitive code, and meaningful test
-coverage. Trace an important customer journey across the frontend, APIs, and
-dependencies. Check the live frontend and safe API requests where authorized, including
-successful results and failure handling. Measure API responses and frontend experience
-separately, and record payload size, location, sample count, timings, and limits. A
-passing unit test, health endpoint, or HTTP status alone does not show that the full
-journey works or responds quickly. Keep the baseline concise and refresh it when the
-project, release, or production behavior changes.
+work. Use [Quality scan](QUALITY_SCAN.md) for concrete checks. Inspect the root README
+and representative code paths; compare languages and conventions with the user's
+related repositories when available, and explain any real compatibility or maintenance
+cost. Trace an important customer journey across the frontend, APIs, and dependencies.
+Check the live frontend and safe API requests where authorized, including successful
+results and failure handling. Measure API responses and frontend experience separately,
+and record payload size, location, sample count, timings, and limits. A passing unit
+test, health endpoint, or HTTP status alone does not show that the full journey works
+or responds quickly. Keep the baseline concise and refresh it when the project, release,
+or production behavior changes.
 
 ## Workflow
 

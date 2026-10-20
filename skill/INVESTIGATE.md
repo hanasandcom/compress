@@ -1,10 +1,21 @@
 # Investigate
 
-Answer a specific question from available evidence without changing code.
+Answer a specific question from evidence, then fix confirmed problems that materially
+affect the answer or the product path being investigated. INVESTIGATE does not stop at
+a list of findings or recommendations.
 
-Follow [Session Control](SESSION_CONTROL.md) for user direction, authority, pause,
-resumption, and handoff. An investigation remains read-only; do not take follow-up
-actions that the user has not authorized.
+Follow [Session Control](SESSION_CONTROL.md) for user direction, the standing release
+authorization that comes with invoking this workflow, pause, resumption, and handoff.
+The investigation request authorizes ordinary, reversible repository changes needed
+to correct material in-scope problems. Do not ask again before editing, deleting,
+releasing, or redeploying those changes.
+
+Apply the mandatory [quality scan](QUALITY_SCAN.md) to the relevant area and fix
+confirmed issues that bear on the question or its user and operator paths. This
+includes misleading README claims, broken instructions, poor code, avoidable
+duplication, and mismatches with established project conventions when the mismatch
+has a concrete maintenance or behavior cost. Give examples and effects; do not stop
+after naming a defect.
 
 ## Choose the work pattern
 
@@ -26,10 +37,10 @@ dictionary.
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
-related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope.
+why. AUDIT and REVIEW report confirmed instances and search limits without changing files.
+INVESTIGATE must fix confirmed in-scope instances and verify none remain. Treat related
+repetitions of the same underlying problem as part of the task; separate, unrelated
+problems may be reported without absorbing them into the current work.
 
 Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
@@ -45,7 +56,8 @@ or game core loop, why users spend time on it, and the product or business value
 monetization only where applicable. Trace component boundaries, data flow, contracts,
 and state transitions. For feeds or recommendations, consider user benefit and control,
 diversity, and tradeoffs; engagement or time spent alone is not proof of value. Keep
-findings within the question's scope and report them without changing files.
+   findings within the question's scope and fix confirmed defects that affect the
+   answer or product path.
 
 ## Whole-scope finding check
 
@@ -59,8 +71,9 @@ inspected scope.
 ## Workflow
 
 1. **Pin down the question.** State the decision the answer should support and the
-   systems or time period in scope. If the question is answerable, begin; do not
-   widen it into an audit or implementation plan.
+   systems or time period in scope. The question sets the starting point, not a reason
+   to ignore defects that affect its answer or the product path. Do not turn the task
+   into an unrelated whole-product cleanup.
 2. **Find direct evidence.** Inspect relevant code, configuration, history, tests, logs,
    analytics, documentation, and actual runtime behavior where access permits. Trace
    the full path across repository and service boundaries, including the producer,
@@ -70,22 +83,32 @@ inspected scope.
    Search finds code references but cannot prove production use or rule out external
    callers. A missing response field does not by itself prove the source lacked the
    value or that it was withheld.
-3. **Research the question.** Follow [Research](RESEARCH.md) to compare distinct evidence
-   that supplies context, tests competing explanations, and qualifies the answer. Connect
-   the synthesis to the question's evidence and state when it leaves a decision open.
+3. **Research the question and the fixes.** Follow [Research](RESEARCH.md) to compare
+   distinct evidence that supplies context, tests competing explanations, and qualifies
+   both the answer and any material changes. Carry one evidence map through any chained
+   FIX, REMOVE, REFACTOR, or BUILD work; add research only for decisions the existing
+   map does not cover. Connect the synthesis to product evidence and acceptance checks.
 4. **Separate evidence from inference.** Label what is confirmed, what is likely, and
    what remains unknown. For use or value claims, name the data source, period,
    coverage, and filters. Separate requests, page views, completed tasks, purchases,
    delivered service, and customer outcomes. Distinguish zero recorded events from
    missing or incomplete telemetry. Do not invent results or turn earlier agent
    conclusions into facts without checking them.
-5. **Flag problems found.** Always report material bloat, duplicate behavior, broken
-   paths, or poor practices that appear in the inspected scope, even when they are not
-   needed to answer the main question. Give concrete examples and effects; do not claim
-   the whole repository has the problem unless you checked it.
-6. **Answer directly.** Give the answer first, then the strongest evidence, limitations,
-   and what would resolve remaining uncertainty. Link sources when research was used.
-   Check the response against [wording.md](../dictionary/wording.md) and [habits.md](../dictionary/habits.md); keep it specific
-   and short.
-7. **Keep the boundary.** Do not edit code, commit, push, or deploy. If the user wants a
-   change after the investigation, use BUILD, FIX, REMOVE, or REFACTOR as appropriate.
+5. **Settle confirmed defects.** For each material problem that affects the question or
+   the relevant product path, choose BUILD, FIX, REMOVE, or REFACTOR and complete that
+   work in the same task. Search related files and repositories for repeated instances,
+   fix the in-scope ones, and verify none remain. If changing languages, moving shared
+   code, or changing service boundaries, map all callers and deployment contracts first;
+   preserve behavior and make the smallest complete migration. Do not infer that a
+   language outlier is harmful from counts alone: establish its cost and the benefit of
+   the proposed standard. Do not leave a material README correction or a confirmed,
+   directly related code defect as a recommendation.
+6. **Complete the checks.** Run the relevant local checks for the question and fixes.
+   Follow BUILD or REFACTOR for behavior, compatibility, commit, push, staging, and
+   redeployment. If a required operation is blocked by a platform gate or an exact
+   technical limit, finish independent work and state the unfinished step and why.
+7. **Answer after the work is complete.** Give the direct answer, the evidence from
+   each relevant repository, changes made, checks run, remaining uncertainty, and any
+   boundary that prevented completion. Link research used. Check the report against
+   [wording.md](../dictionary/wording.md) and [habits.md](../dictionary/habits.md).
+   Do not present an early finding as the finished investigation.

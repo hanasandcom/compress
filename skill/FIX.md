@@ -2,9 +2,21 @@
 
 Correct a specific defect with the smallest change that addresses its cause.
 
-Follow [Session Control](SESSION_CONTROL.md) for user direction, authorization,
-pauses, approvals, verification, and handoff. A fix request does not authorize unrelated
-external or production actions.
+Follow [Session Control](SESSION_CONTROL.md) for the standing release authorization
+that comes with invoking this workflow, user direction, pauses, verification, and
+handoff. Keep the work within the reported product path.
+
+Apply the mandatory [quality scan](QUALITY_SCAN.md) on every fix. Inspect the README,
+names, and relevant code even for a narrow defect; fix related weaknesses and report
+material separate issues with examples and effects.
+
+If the user has assigned ongoing responsibility for the project, establish or refresh
+the project baseline in [AUDIT.md](AUDIT.md) before a narrow fix. Check the customer
+path through the frontend, APIs, and dependencies; verify live behavior and timing
+where authorized; and compare the README and language conventions with the source and
+related projects. Fix the reported defect in that context and report other material
+baseline findings with evidence. Without a stewardship or broader health request, keep
+the work focused on the reported defect and its directly related product path.
 
 If the user has assigned ongoing responsibility for the project, establish or refresh
 the project baseline in [AUDIT.md](AUDIT.md) before a narrow fix. Check the customer
@@ -45,10 +57,10 @@ you added against the dictionary.
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
-related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope.
+why. AUDIT and REVIEW report confirmed instances and search limits without changing files.
+INVESTIGATE must fix confirmed in-scope instances and verify none remain. Treat related
+repetitions of the same underlying problem as part of the task; separate, unrelated
+problems may be reported without absorbing them into the current work.
 
 Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
@@ -100,11 +112,10 @@ narrow green test does not establish that the product now works as promised.
    still works. Read relevant CI results when available. Do not claim a check passed if
    it was not run.
 7. **Release code changes.** After local checks pass, commit and push to every
-   remote over SSH; verify each remote. For a deployable app or service, run
-   server-side tests in staging before redeploying. If staging does not
-   exist, ask the user to create or authorize it and wait; do not redeploy before staged
-   tests pass. If a push or test fails, report it and stop. For non-deployable projects,
-   state why staging does not apply.
+   configured remote over SSH; verify each one. For a deployable app or service, run
+   server-side tests in staging before redeploying. If staging is missing, follow
+   BUILD's isolated temporary staging procedure. If a push or test fails, fix the issue
+   and repeat the checks. For non-deployable projects, state why staging does not apply.
 8. **Report plainly.** State the cause, the correction, the checks that ran, and any
    remaining uncertainty. Always report material codebase problems found in the
    inspected scope, with concrete examples and effects. Use the [wording

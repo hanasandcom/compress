@@ -4,8 +4,12 @@ Use this workflow to add a requested capability or extend an existing one. Build
 the smallest complete change that serves a real, stated purpose.
 
 The user controls scope and live work. Follow [SESSION_CONTROL](SESSION_CONTROL.md) for
-current context, authority, user steering, approvals, session status, verification, and
-handoff. This workflow does not grant permission to publish or affect production.
+the standing release authorization that comes with invoking this workflow, current
+context, user steering, session status, verification, and handoff.
+
+Apply the mandatory [quality scan](QUALITY_SCAN.md) on every build. Inspect the README,
+names, and relevant code before implementation; fix directly related weaknesses and
+report material separate issues with examples and effects.
 
 ## Route and plan the work
 
@@ -42,10 +46,10 @@ you added against the dictionary.
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
-related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope.
+why. AUDIT and REVIEW report confirmed instances and search limits without changing files.
+INVESTIGATE must fix confirmed in-scope instances and verify none remain. Treat related
+repetitions of the same underlying problem as part of the task; separate, unrelated
+problems may be reported without absorbing them into the current work.
 
 Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
@@ -148,12 +152,8 @@ path and report whether it delivers the promised result.
    Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
    drift, and accidental changes. Fix failures before committing. Passing tests alone
    do not prove the feature is useful or usable.
-10. **Commit, push everywhere, test in staging, then redeploy.** Before release,
-   check the current user authorization and project policy for the exact branch,
-   remotes, environment, and action. Preserve standing user authorization that still
-   covers this change; the workflow text alone grants no permission. If authorization
-   is missing, pause that release action and ask. After local checks pass, commit the
-   change. List every configured remote and its push URLs, then push
+10. **Commit, push everywhere, test in staging, then redeploy.** After local checks
+   pass, commit the change. List every configured remote and its push URLs, then push
    the branch to every remote; do not assume `origin` is the only destination. Use SSH
    URLs for repository pushes when available; do not fall back to HTTPS when SSH is
    configured. Verify that each destination has the new commit. If any push or
@@ -161,10 +161,13 @@ path and report whether it delivers the promised result.
    deployable app or service,
    run the project's server-side tests in staging and redeploy only after they pass.
    Inspect the existing deployment instructions and use the established commands and
-   checks. Always use staging before production. If staging does not exist, ask the user
-   to create or authorize creating it; do not redeploy until staging is available and
-   the tests pass. If staging tests fail, stop, report the failure, fix it, and repeat
-   the checks. For a project with no deployable app or service, commit and push to every
+   checks. Always use staging before production. If staging does not exist, create an
+   isolated temporary staging target using the project's established stack without
+   adding paid resources; use synthetic or sanitized data. If platform approval is
+   required, follow that gate. If safe staging cannot be created with available
+   resources, finish independent work and report the exact blocker. If staging tests
+   fail, fix the issue and repeat the checks. For a project with no deployable app or
+   service, commit and push to every
    remote after local tests, and state why staging and redeployment do not apply.
 11. **Report evidence and limits.** Briefly state the user outcome, what existing code
    was reused or why new code was needed, what research or user evidence informed the

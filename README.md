@@ -8,8 +8,9 @@ Compress provides separate instructions for common software tasks. It is a set o
 2. Provide the workflow and its shared references: [session control](skill/SESSION_CONTROL.md),
    [research](skill/RESEARCH.md), and the relevant part of the [wording
    dictionary](dictionary/wording.md) plus [AI writing habits](dictionary/habits.md)
-   when the agent writes prose. If the agent cannot
-   access this repository, include those references with the task.
+   when the agent writes prose. Apply the mandatory [quality scan](skill/QUALITY_SCAN.md)
+   to every software task, including narrow changes and read-only work. If the agent
+   cannot access this repository, include those references with the task.
 3. Include the target repository, latest user direction, relevant project instructions,
    current branch/revision, constraints, and actions already authorized. Check the actual
    workspace and sandbox limits before deciding the repository is unavailable; follow
@@ -22,13 +23,13 @@ Compress provides separate instructions for common software tasks. It is a set o
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
 When the user assigns ongoing responsibility for a project, or asks whether it is
-clean, healthy, or production-ready, start with a baseline using [Audit](skill/AUDIT.md)
-before handling a narrow follow-up. Review the README and codebase, compare languages
-and conventions with the user's related projects when available, and trace a
-representative frontend journey through its APIs and dependencies. Verify live behavior
-and performance where authorized. Separate frontend, API, and dependency timings, and
-report unavailable evidence. Carry this stewardship context into later tasks until the
-user changes it.
+clean, healthy, or production-ready, start with a project baseline using [Audit](skill/AUDIT.md)
+and [Quality scan](skill/QUALITY_SCAN.md) before handling a narrow follow-up. Review
+the README and codebase, compare languages and conventions with the user's related
+projects when available, and trace a representative frontend journey through its APIs
+and dependencies. Verify live behavior and performance where authorized. Separate
+frontend, API, and dependency timings, and report unavailable evidence. Carry this
+stewardship context into later tasks until the user changes it.
 
 Do not assume the sandbox is empty or that a repository must be missing because it is
 not in the current directory. Inspect the current checkout, allowed workspace roots,
@@ -44,15 +45,16 @@ unavailable, report what you checked and the exact permission or input needed. D
 claim that no files are available without checking the workspace.
 
 Search related files and product surfaces for the same issue, not just the reported
-example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
-relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
-related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope. Define scope by the affected product journey and its
-dependencies, not by repository boundaries alone. If a fix crosses into a separate
-product or independently owned service, report the boundary and establish authority
-before changing it.
+example. BUILD, FIX, REMOVE, REFACTOR, and INVESTIGATE must fix confirmed, in-scope instances
+and verify none remain; if one cannot be fixed, state which and why. AUDIT and REVIEW
+report findings without changing files. Treat related
+repetitions of the same underlying problem as part of the task; separate, unrelated
+problems may be reported without absorbing them into the current work. Define scope by the affected product journey and its dependencies, not by repository
+boundaries alone. Check related repositories when shared ownership, repeated code,
+language or toolchain choices, or service integration bear on the question. If a fix
+crosses into a separately owned product or service, establish the user's authority and
+the technical boundary before changing it; ordinary in-scope changes do not need
+another approval.
 
 Research is required in every workflow. Follow the [Research protocol](skill/RESEARCH.md):
 use at least three full, relevant peer-reviewed papers across the task, then scale the
@@ -130,12 +132,16 @@ to maximize the number of workers.
 
 The user can redirect, pause, resume, or cancel active work. Follow
 [Session Control](skill/SESSION_CONTROL.md) for the shared rules on context, authority,
-approval, status, cancellation, verification, and handoff. A workflow grants no new
-permission. A request to build, fix, refactor, or remove authorizes ordinary repository
-changes within its scope, including deleting local files that need to change or exist
-only for the requested removal. Do not ask again for those steps. Preserve durable user
-authorization that still applies; ask only before external actions, production changes,
-or work outside the stated scope that the user has not authorized.
+approval, status, cancellation, verification, and handoff. Invoking a code-changing
+Compress workflow is the user's standing authorization to complete its normal release
+path: test the change, commit it, push it to every configured remote, test in staging,
+and redeploy the affected service when the workflow calls for a release. Do this without
+waiting for a separate invitation or asking for release approval. This covers only the
+requested product, its configured remotes, and its established deployment targets; it
+does not authorize unrelated work, force-pushing, production data erasure, or bypassing
+platform approval gates. Follow the workflow's staging and production sequence. For
+read-only AUDIT and REVIEW tasks that produce no code changes, report findings without
+creating a commit.
 
 ## Evaluate the workflows
 
@@ -158,8 +164,10 @@ helped.
 - [Refactor](skill/REFACTOR.md) — restructure code while preserving behavior the user still wants.
 - [Audit](skill/AUDIT.md) — assess system-wide usage, value, and maintenance cost.
 - [Review](skill/REVIEW.md) — evaluate a proposed change.
-- [Investigate](skill/INVESTIGATE.md) — answer a question without changing code.
+- [Investigate](skill/INVESTIGATE.md) — answer a question and finish the directly related fixes it reveals.
 - [Parallelization](skill/PARALLELIZATION.md) — divide one coherent goal into independent work.
 - [Multitasking](skill/MULTITASKING.md) — assign separate requested outcomes to separate owners.
 - [Session Control](skill/SESSION_CONTROL.md) — keep the user in control across active work, decisions, and handoffs.
 - [Research](skill/RESEARCH.md) — choose, compare, and apply a useful set of papers.
+- [Quality scan](skill/QUALITY_SCAN.md) — check code, names, and README quality in
+  scope on every software task.

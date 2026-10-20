@@ -14,8 +14,8 @@ relevant project instructions. Establish and keep in working context:
 - Requested outcome, scope, exclusions, product/repository, current branch or worktree,
   base revision, affected consumers and shared owners.
 - Any ongoing project-stewardship direction from the user. Preserve its project scope
-  across follow-up tasks until the user changes or ends it; use AUDIT.md to establish
-  or refresh the baseline before narrow work.
+  across follow-up tasks until the user changes or ends it; use AUDIT.md and
+  QUALITY_SCAN.md to establish or refresh the baseline before narrow work.
 - Relevant project facts, architecture, existing contracts, acceptance conditions,
   available checks, and facts that remain unknown.
 - Actions already authorized, who authorized them, the exact target and environment,
@@ -65,11 +65,13 @@ When asked to evaluate a repository in a copy, record its branch, base revision,
 existing dirty state before experimentation. Preserve the source tree. Copy the exact
 state needed for the task; exclude secrets without reading them. Before running a
 service, test, build, or generated script, inspect its configuration and startup path
-to verify that databases, APIs, payment providers, and deployment targets are local or
-explicitly authorized. Check copied remotes and push URLs before any release step. If a
-target is unknown or points to production, do not start it; use an isolated test target
-or report the check as unavailable. A test command may start its own web server or
-services, so inspect the runner configuration as well as the command name.
+to verify that databases, APIs, payment providers, and deployment targets are local,
+staging, or covered by the standing release authorization above. Do not point routine
+tests at production; the documented production deployment occurs only after staging
+passes. Check copied remotes and push URLs before release. If a target is unknown, use
+an isolated test target or report the check as unavailable. A test command may start
+its own web server or services, so inspect the runner configuration as well as the
+command name.
 
 For changes to public interfaces or stored formats, check compatibility against fixed
 historical requests or records when those are part of the supported contract; a current
@@ -78,16 +80,23 @@ or removing copied or vendored material. Do not change license terms without the
 direction.
 
 Treat the user's current and still-applicable standing directions as authority for
-their stated scope. Ordinary repository edits and deletion of in-scope files are part
-of an authorized build, fix, refactor, or removal request; do not ask the user to
-approve those steps again. A workflow file does not grant permission beyond the user's
-scope. Subagents inherit only the actions authorized for their assigned work;
-delegation cannot authorize another agent to publish, deploy, contact people, erase
-production data, or expand scope. Before an external action or production change,
-verify that the current task or applicable project policy authorizes that exact action,
-target, and environment. Ask only when the action depends on authority the user has not
-given. Platform approvals and safety limits still apply. Never treat silence or an
-unrelated approval as consent.
+their stated scope. Invoking a code-changing Compress workflow is the user's standing
+authorization to finish that workflow's normal release path without a separate
+invitation: run the checks, commit the change, push it to every configured remote, test
+in staging, and redeploy the affected service when the workflow requires release. This
+authorization covers only the requested product, its configured remotes, and its
+established deployment targets. Do not ask for another approval for those steps.
+
+Do not force-push, erase production data, contact people, or expand beyond the requested
+scope. If no staging environment exists, create an isolated temporary staging target
+using the project's established stack and without introducing new paid resources; use
+synthetic or sanitized data. Test it before production deployment. If the platform
+requires approval, follow that gate. If safe staging cannot be made available with the
+project's resources, finish all independent work and report the exact blocker rather
+than silently deploying to production. Preserve and follow any narrower user direction
+that limits a specific release action. Subagents inherit only the authorized scope and
+cannot expand it. Never treat silence or an unrelated approval as consent for work
+outside this standing release path.
 
 ## Keep people in control while work runs
 

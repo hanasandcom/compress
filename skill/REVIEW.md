@@ -7,6 +7,10 @@ Follow [Session Control](SESSION_CONTROL.md) for user direction, authority, paus
 resumption, and handoff. A review remains read-only; report concerns without making the
 change.
 
+Apply the mandatory [quality scan](QUALITY_SCAN.md) to the proposed change and its
+relevant surrounding files. Report material README, naming, or code-quality issues in
+that area, even when they are outside the diff.
+
 ## Choose the work pattern
 
 For every request, assess whether independent parts can finish sooner through
@@ -27,8 +31,7 @@ dictionary.
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
+why. AUDIT and REVIEW report findings without changing files. Treat confirmed repetitions of the same underlying problem in
 related product scope as part of the task. Ask before expanding only for separate
 problems outside that scope.
 

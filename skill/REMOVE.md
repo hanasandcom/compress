@@ -6,6 +6,10 @@ the user to confirm that deletion again. This covers code, pages, tests, docs, a
 configuration that exist only for the removed capability. It does not authorize
 production data erasure or changes outside the request.
 
+Apply the mandatory [quality scan](QUALITY_SCAN.md) while tracing the removal. Check
+that remaining names, README instructions, and code describe the product left behind;
+correct related stale references and report material separate problems.
+
 Follow [Session Control](SESSION_CONTROL.md) for user direction, pauses, verification,
 and handoff. Before writing prose, check the relevant parts of the [wording
 dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
@@ -72,9 +76,9 @@ vendored code; do not change license terms as part of cleanup.
    inspect without letting that uncertainty undo the value decision.
 6. **Release code changes.** After local checks pass, commit and push to every
    configured remote over SSH, then verify each one. For a deployable app or service,
-   test in staging before redeploying. If staging is missing, ask to create it or
-   authorize access, and wait for tests to pass before redeploying. Stop and report a
-   failed push or check. Say why staging does not apply to a non-deployable project.
+   test in staging before redeploying. If staging is missing, follow BUILD's isolated
+   temporary staging procedure. If a push or test fails, fix the issue and repeat the
+   checks. Say why staging does not apply to a non-deployable project.
 7. **Report plainly.** State what was removed, what user task it failed to deliver,
    affected callers, checks, and remaining operational risks. Include other material
    problems found in the inspected scope, with examples and effects. Do not present

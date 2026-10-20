@@ -2,9 +2,14 @@
 
 Improve code structure while preserving the behavior users still need.
 
-Follow [Session Control](SESSION_CONTROL.md) for user direction, authorization,
-pauses, approvals, verification, and handoff. A refactor request does not grant
-permission to publish or affect production.
+Follow [Session Control](SESSION_CONTROL.md) for the standing release authorization
+that comes with invoking this workflow, user direction, pauses, verification, and
+handoff.
+
+Apply the mandatory [quality scan](QUALITY_SCAN.md) on every refactor, including a
+small rename. Inspect README accuracy, names across affected callers and deployment
+surfaces, and code maintainability. Fix all confirmed repetitions in scope; report
+material separate problems with examples and effects.
 
 Before writing or changing user-facing or maintainer-facing prose, consult the matching
 section of the [wording dictionary](../dictionary/wording.md) and [AI writing habits](../dictionary/habits.md).
@@ -38,10 +43,10 @@ boundaries, data flow, contracts, state, failure behavior, and operational effec
 Search related files and product surfaces for the same issue, not just the reported
 example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
 relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT, REVIEW, and INVESTIGATE must report confirmed instances and search limits
-without changing files. Treat confirmed repetitions of the same underlying problem in
-related product scope as part of the task. Ask before expanding only for separate
-problems outside that scope.
+why. AUDIT and REVIEW report confirmed instances and search limits without changing files.
+INVESTIGATE must fix confirmed in-scope instances and verify none remain. Treat related
+repetitions of the same underlying problem as part of the task; separate, unrelated
+problems may be reported without absorbing them into the current work.
 
 Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
@@ -89,9 +94,9 @@ outputs.
    for accidental behavior changes, duplicate logic, dead code, and unnecessary lines.
 7. **Release code changes.** After local checks pass, commit and push to every
    configured remote over SSH, then verify each one. For a deployable app or service,
-   test in staging before redeploying. If staging is missing, ask the user to create it
-   or authorize access; wait for tests to pass before redeploying. Stop and report any
-   failed push or check. State why staging does not apply to a non-deployable project.
+   test in staging before redeploying. If staging is missing, follow BUILD's isolated
+   temporary staging procedure. If a push or test fails, fix the issue and repeat the
+   checks. State why staging does not apply to a non-deployable project.
 8. **Report plainly.** State the structural problem, what changed, the behavior checks
    and comparisons that ran, and any uncovered behavior. Always report other material
    codebase problems found in the inspected scope, with examples and effects. Use the
