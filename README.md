@@ -143,6 +143,25 @@ platform approval gates. Follow the workflow's staging and production sequence. 
 read-only AUDIT and REVIEW tasks that produce no code changes, report findings without
 creating a commit.
 
+## Commit messages
+
+Write a concise commit subject that names the change and affected area. Use a
+Conventional Commit type and a short scope when it makes the area clear, followed by
+an imperative description. Keep the subject specific enough to explain the resulting
+behavior without reading the diff. For example:
+
+```text
+fix(frontend): align recovery check with retired TI route
+feat(api): record VM password reveal events
+refactor(vms): group secondary row actions in menu
+```
+
+Choose the type that matches the work (`fix`, `feat`, `refactor`, `docs`, `test`,
+`build`, or another established type in the repository). Do not use vague subjects
+such as `updates`, `fix stuff`, or a ticket number alone. When a task spans multiple
+repositories, commit each repository's scoped changes separately with subjects that
+describe that repository's change.
+
 ## Evaluate the workflows
 
 These instructions are proposals until they improve real work. Keep the previous
