@@ -34,13 +34,22 @@ when they fit the facts; do not mechanically replace words or load all 164 pairs
 one section answers the question. Check the answer and final report against the
 dictionary.
 
-Search related files and product surfaces for the same issue, not just the reported
-example. BUILD, FIX, REMOVE, and REFACTOR must fix every confirmed instance in the
-relevant product scope and verify none remain; if one cannot be fixed, state which and
-why. AUDIT and REVIEW report confirmed instances and search limits without changing files.
-INVESTIGATE must fix confirmed in-scope instances and verify none remain. Treat related
-repetitions of the same underlying problem as part of the task; separate, unrelated
-problems may be reported without absorbing them into the current work.
+Search related files, product surfaces, and relevant repositories for the same issue,
+not just the reported example. BUILD, FIX, REMOVE, REFACTOR, and INVESTIGATE must fix
+confirmed in-scope instances and verify none remain; if one cannot be fixed, state
+which and why. AUDIT and REVIEW report findings without changing files. For
+cross-repository questions, inspect actual callers, configuration, runtime behavior,
+ownership, languages, toolchains, and release boundaries. Check whether shared code or
+operational behavior can move into a common repository without coupling service-owned
+settings or releases. Treat related repetitions as part of the task; separate,
+unrelated problems may be reported without absorbing them into the current work.
+
+When the user has established a shared language or toolchain convention, compare the
+repository against it and inspect the reason for any exception. If maintained source
+breaks that convention and migration is safe and useful, migrate the maintained source
+and tests as part of the investigation; do not leave a concrete mismatch as a
+recommendation. Keep configuration, generated files, and vendored code in their proper
+formats. Preserve runtime behavior and check the build, callers, and deployment path.
 
 Research is required. Follow the shared [Research protocol](RESEARCH.md): every task
 uses at least three full, relevant peer-reviewed papers that contribute distinct,
