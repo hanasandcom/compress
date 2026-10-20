@@ -21,6 +21,15 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
+When the user assigns ongoing responsibility for a project, or asks whether it is
+clean, healthy, or production-ready, start with a baseline using [Audit](skill/AUDIT.md)
+before handling a narrow follow-up. Review the README and codebase, compare languages
+and conventions with the user's related projects when available, and trace a
+representative frontend journey through its APIs and dependencies. Verify live behavior
+and performance where authorized. Separate frontend, API, and dependency timings, and
+report unavailable evidence. Carry this stewardship context into later tasks until the
+user changes it.
+
 Do not assume the sandbox is empty or that a repository must be missing because it is
 not in the current directory. Inspect the current checkout, allowed workspace roots,
 attached projects or worktrees, and available repository connectors. In Codex, check

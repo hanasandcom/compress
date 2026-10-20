@@ -59,6 +59,22 @@ assertions, poor failure coverage, duplicate suites, or unnecessary setup. Show 
 effects; counts only locate candidates. Separate core functionality from useful adjacent
 support and from ceremonial or disconnected surfaces.
 
+## First baseline for project stewardship
+
+When the user assigns ongoing responsibility for a project, or asks whether it is
+clean, healthy, or production-ready, establish this baseline before narrower follow-up
+work. Inspect the root README and representative code paths; compare languages and
+conventions with the user's related repositories when available, and explain any real
+compatibility or maintenance cost. Review structure, module boundaries, dependencies,
+duplicate or dead paths, error handling, security-sensitive code, and meaningful test
+coverage. Trace an important customer journey across the frontend, APIs, and
+dependencies. Check the live frontend and safe API requests where authorized, including
+successful results and failure handling. Measure API responses and frontend experience
+separately, and record payload size, location, sample count, timings, and limits. A
+passing unit test, health endpoint, or HTTP status alone does not show that the full
+journey works or responds quickly. Keep the baseline concise and refresh it when the
+project, release, or production behavior changes.
+
 ## Workflow
 
 1. **Set the boundary.** Name the product areas, APIs, services, or time period in
@@ -110,3 +126,20 @@ research problem ([IEEE, 2018](https://ieeexplore.ieee.org/document/8432173)). T
 papers support checking multiple evidence sources; they do not prove findings about a
 different repository. The three-paper minimum is a workflow requirement, not a claim
 that research has established three as the ideal number.
+
+Service baselines need separate documentation, runtime, and user-path evidence. Tan et
+al. analyzed documentation histories for more than 3,000 GitHub projects and found
+code references that became stale; their detector cannot find every semantic or
+operationally outdated claim, so README checks must compare instructions with source
+and deployment. Cândido et al.'s mapping of 108 monitoring papers describes production
+logs and runtime data as useful for diagnosing live behavior, while finding persistent
+challenges in logging and analysis; missing telemetry limits the claim and does not
+show that a service is healthy. Ponce et al. reviewed 74 microservice testing studies
+and found distinct system, API, performance, and reliability test objectives. Their
+review supports checking both endpoint contracts and a full user journey, but does not
+prescribe a universal latency target or test suite. These findings motivate the checks
+above; runtime evidence from the actual project determines whether it works.
+
+- Tan, Wagner, and Treude, [Detecting outdated code element references in software repository documentation](https://doi.org/10.1007/s10664-023-10397-6), *Empirical Software Engineering* (2024).
+- Cândido et al., [Log-based software monitoring: a systematic mapping study](https://doi.org/10.7717/peerj-cs.489), *PeerJ Computer Science* (2021).
+- Ponce et al., [Microservices testing: A systematic literature review](https://doi.org/10.1016/j.infsof.2025.107870), *Information and Software Technology* (2025).

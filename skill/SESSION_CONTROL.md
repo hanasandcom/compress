@@ -13,6 +13,9 @@ relevant project instructions. Establish and keep in working context:
 
 - Requested outcome, scope, exclusions, product/repository, current branch or worktree,
   base revision, affected consumers and shared owners.
+- Any ongoing project-stewardship direction from the user. Preserve its project scope
+  across follow-up tasks until the user changes or ends it; use AUDIT.md to establish
+  or refresh the baseline before narrow work.
 - Relevant project facts, architecture, existing contracts, acceptance conditions,
   available checks, and facts that remain unknown.
 - Actions already authorized, who authorized them, the exact target and environment,

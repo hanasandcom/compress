@@ -6,6 +6,14 @@ Follow [Session Control](SESSION_CONTROL.md) for user direction, authorization,
 pauses, approvals, verification, and handoff. A fix request does not authorize unrelated
 external or production actions.
 
+If the user has assigned ongoing responsibility for the project, establish or refresh
+the project baseline in [AUDIT.md](AUDIT.md) before a narrow fix. Check the customer
+path through the frontend, APIs, and dependencies; verify live behavior and timing
+where authorized; and compare the README and language conventions with the source and
+related projects. Fix the reported defect in that context and report other material
+baseline findings with evidence. Without a stewardship or broader health request, keep
+the work focused on the reported defect and its directly related product path.
+
 ## Route and plan the work
 
 For every request, assess whether independent parts of this same goal can finish sooner
