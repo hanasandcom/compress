@@ -90,6 +90,12 @@ flows, first map the smallest useful architecture: responsibilities, data flow,
 interfaces, state, failure paths, and operating needs. Scale the plan to the change;
 do not add planning documents for a one-line fix.
 
+Keep the product UI focused on helping its users complete their tasks. Do not put
+assistant explanations, chat answers, or narration about the requested implementation
+into the product as explanatory copy. Add text only when it serves the product flow,
+such as a necessary instruction, status, or error, and follow the user's requested
+wording. Explain completed work in the conversation instead.
+
 Research on recommenders and game motivation does not establish one universal product
 pattern. Research on recommender control describes usability and trust barriers; work
 on preference pollution explains how recommendations can shape the data later systems
