@@ -152,14 +152,18 @@ path and report whether it delivers the promised result.
    Inspect the diff for duplicate logic, dead code, unnecessary surface area, style
    drift, and accidental changes. Fix failures before committing. Passing tests alone
    do not prove the feature is useful or usable.
-10. **Commit, push everywhere, test in staging, then redeploy.** After local checks
-   pass, commit the change. List every configured remote and its push URLs, then push
-   the branch to every remote; do not assume `origin` is the only destination. Use SSH
-   URLs for repository pushes when available; do not fall back to HTTPS when SSH is
-   configured. Verify that each destination has the new commit. If any push or
-   verification fails, report it and stop before staging tests or redeployment. For a
-   deployable app or service,
-   run the project's server-side tests in staging and redeploy only after they pass.
+10. **Commit, integrate, push everywhere, test in staging, deploy, and verify.** After
+   local checks pass, commit the change. List every configured remote and its push URLs,
+   then publish the candidate branch to every remote; do not assume `origin` is the only
+   destination. Use SSH URLs for repository pushes when available; do not fall back to
+   HTTPS when SSH is configured. Verify each push. A candidate branch, pull request,
+   temporary worktree, or private temporary directory is not the delivered result:
+   integrate the reviewed commit into the documented production branch (normally
+   `main`) and push that branch to every configured production remote. Verify each
+   destination has the integration commit. Resolve a failed push or verification before
+   proceeding; keep the task active or waiting if a trusted host key or access decision
+   is needed. For a deployable app or service, run the project's server-side tests in
+   staging and deploy to production only after they pass.
    Inspect the existing deployment instructions and use the established commands and
    checks. Always use staging before production. If staging does not exist, create an
    isolated temporary staging target using the project's established stack without
@@ -167,8 +171,9 @@ path and report whether it delivers the promised result.
    required, follow that gate. If safe staging cannot be created with available
    resources, finish independent work and report the exact blocker. If staging tests
    fail, fix the issue and repeat the checks. For a project with no deployable app or
-   service, commit and push to every
-   remote after local tests, and state why staging and redeployment do not apply.
+   service, commit on the integration branch and push that branch to every remote after
+   local checks, verify the pushed revisions, and state why staging and deployment do
+   not apply. Do not mark the task complete until all applicable steps have passed.
 11. **Report evidence and limits.** Briefly state the user outcome, what existing code
    was reused or why new code was needed, what research or user evidence informed the
    design, what changed, which remotes received the commit, and what local, staging,

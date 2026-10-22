@@ -151,18 +151,24 @@ creating a commit.
 
 ### Release completion invariant
 
-A pushed feature branch is still unfinished work. For code changes, integrate the
-reviewed commit into the repository's documented integration branch (normally
-`main`, unless the user or project specifies another target), push that branch to
-every configured remote, complete the required staging checks, and redeploy the
-affected production service through its established deployment target. Verify the
-deployed revision, service health, and a relevant safe behavior after deployment;
-a successful merge, CI run, or deploy command alone does not establish that the
-change is live. Do not report the task complete until these steps are confirmed.
-If a required step cannot run because its target or access is unavailable, keep
-the task active or waiting on that specific dependency, finish independent work,
-and report the exact check and access needed. Do not treat a pushed branch or an
-unverified deployment as completion.
+A feature-branch push, open pull request, temporary worktree, or file under a private
+temporary directory is only an intermediate workspace or review artifact. None is a
+completed task. For deployable code, move the reviewed commit into the repository's
+documented integration branch (normally `main`, unless the user or project specifies
+another target), push that branch to every configured production remote, complete the
+required staging checks, deploy the affected production service through its established
+deployment target, and verify the deployed revision, service health, and relevant safe
+user behavior. A merge, CI run, or deploy command alone does not prove the change is
+live. Do not report completion until every required step and check has passed.
+
+If a required step fails or needs a trusted external fact, keep the task active or
+waiting on that exact dependency, preserve the candidate commit and evidence, finish
+independent work, and say which release steps remain. Do not call the task done because
+one remote received a branch, a temporary worktree contains the fix, or the service
+looks healthy before the new revision is verified. For a repository with no deployable
+service, complete local checks, commit on its integration branch, push that branch to
+every configured remote, verify the result, and state why staging and deployment do not
+apply.
 
 ## Commit messages
 

@@ -111,11 +111,17 @@ narrow green test does not establish that the product now works as promised.
    Verify that the original failure is gone and that important neighboring behavior
    still works. Read relevant CI results when available. Do not claim a check passed if
    it was not run.
-7. **Release code changes.** After local checks pass, commit and push to every
-   configured remote over SSH; verify each one. For a deployable app or service, run
-   server-side tests in staging before redeploying. If staging is missing, follow
-   BUILD's isolated temporary staging procedure. If a push or test fails, fix the issue
-   and repeat the checks. For non-deployable projects, state why staging does not apply.
+7. **Release code changes.** After local checks pass, commit the fix, publish its
+   candidate branch to every configured remote over SSH, and verify each push. Then
+   integrate it into the documented production branch and push that branch to every
+   configured production remote. A branch push, pull request, or temporary worktree is
+   not a completed fix. For a deployable app or service, run server-side tests in staging
+   before deploying to production, then verify the deployed revision, health, and a
+   relevant user behavior. If staging is missing, follow BUILD's isolated temporary
+   staging procedure. Resolve failed pushes or checks and repeat them; if trusted
+   external verification is required, keep the task active or waiting until it is
+   resolved. For non-deployable projects, verify all integration-branch pushes and state
+   why staging and deployment do not apply.
 8. **Report plainly.** State the cause, the correction, the checks that ran, and any
    remaining uncertainty. Always report material codebase problems found in the
    inspected scope, with concrete examples and effects. Use the [wording

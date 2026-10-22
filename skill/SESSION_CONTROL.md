@@ -98,6 +98,16 @@ that limits a specific release action. Subagents inherit only the authorized sco
 cannot expand it. Never treat silence or an unrelated approval as consent for work
 outside this standing release path.
 
+An isolated worktree or private temporary directory is an execution location, not a
+deliverable. Preserve the source checkout's existing changes, but carry the requested
+commit into the documented integration branch and push that branch to every configured
+production remote. A feature-branch push or pull request alone is never completion.
+For deployable code, finish staging, production deployment, and post-deploy checks before
+marking the goal complete. If a trusted host key, platform gate, or unavailable target
+blocks a step, keep the task active or waiting and identify the exact dependency; do not
+silently skip the step or report completion. For non-deployable work, verify the
+integration-branch push to every remote and record why deployment does not apply.
+
 ## Keep people in control while work runs
 
 For work with several human stakeholders, name the decision owner for scope and the
