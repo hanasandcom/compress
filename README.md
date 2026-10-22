@@ -155,24 +155,29 @@ creating a commit.
 
 ### Release completion invariant
 
-A feature-branch push, open pull request, temporary worktree, or file under a private
-temporary directory is only an intermediate workspace or review artifact. None is a
-completed task. For deployable code, move the reviewed commit into the repository's
-documented integration branch (normally `main`, unless the user or project specifies
-another target), push that branch to every configured production remote, complete the
-required staging checks, deploy the affected production service through its established
-deployment target, and verify the deployed revision, service health, and relevant safe
-user behavior. A merge, CI run, or deploy command alone does not prove the change is
-live. Do not report completion until every required step and check has passed.
+A feature-branch push, open pull request, temporary worktree, private temporary
+directory, or uncommitted local edit is never sufficient to call code work complete.
+These are intermediate work or review locations only. For deployable code, completion
+requires all of the following: run and pass the relevant tests and required checks;
+commit the reviewed result; integrate it into the repository's documented production
+branch (normally `main`, unless the user or project specifies another target); push that
+branch to every configured production remote; pass the required staging checks; deploy
+the affected production service through its established deployment target; then verify
+the deployed revision, service health, and relevant safe user behavior against the live
+service. Treat “push to production” as publishing the integration branch to all
+configured production remotes, and treat deployment and post-deploy verification as
+separate required steps. A branch push, merge, CI run, or deploy command alone does not
+prove the change is complete or live. Do not report completion until every applicable
+step and check has passed.
 
 If a required step fails or needs a trusted external fact, keep the task active or
 waiting on that exact dependency, preserve the candidate commit and evidence, finish
-independent work, and say which release steps remain. Do not call the task done because
-one remote received a branch, a temporary worktree contains the fix, or the service
-looks healthy before the new revision is verified. For a repository with no deployable
-service, complete local checks, commit on its integration branch, push that branch to
-every configured remote, verify the result, and state why staging and deployment do not
-apply.
+independent work, and say which release steps remain. Never call the task done because
+one remote received a branch, a private temporary location contains the fix, or the
+service looks healthy before the new revision is verified. For a repository with no
+deployable service, complete and pass local checks, commit on its integration branch,
+push that branch to every configured remote, verify the result, and state why staging
+and deployment do not apply.
 
 ## Commit messages
 
