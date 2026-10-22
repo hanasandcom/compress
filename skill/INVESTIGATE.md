@@ -4,6 +4,13 @@ Answer a specific question from evidence, then fix confirmed problems that mater
 affect the answer or the product path being investigated. INVESTIGATE does not stop at
 a list of findings or recommendations.
 
+Keep the question and its observable answer as the task's goal card under
+[Session Control](SESSION_CONTROL.md). A broad request to investigate a product still
+needs a bounded first slice and regular checks that each side path changes the answer or
+fixes a confirmed issue in the affected journey. List unrelated findings separately;
+do not keep opening adjacent work without checking the original question and the fastest
+remaining path.
+
 Follow [Session Control](SESSION_CONTROL.md) for user direction, the standing release
 authorization that comes with invoking this workflow, pause, resumption, and handoff.
 The investigation request authorizes ordinary, reversible repository changes needed

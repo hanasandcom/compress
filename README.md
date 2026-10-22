@@ -4,14 +4,21 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 ## How to use it
 
-1. Choose the workflow that matches the task.
-2. Provide the workflow and its shared references: [session control](skill/SESSION_CONTROL.md),
+1. State the requested outcome, observable completion evidence, and the fastest
+   complete path before starting. Keep a simple, bounded task under five minutes
+   when practical. If the required release path or a real blocker makes that
+   impossible, deliver the first concrete result within five minutes and follow the
+   recurring drift checks in [Session Control](skill/SESSION_CONTROL.md); do not let
+   research, quality scanning, or adjacent findings silently turn it into open-ended
+   work.
+2. Choose the workflow that matches the task.
+3. Provide the workflow and its shared references: [session control](skill/SESSION_CONTROL.md),
    [research](skill/RESEARCH.md), and the relevant part of the [wording
    dictionary](dictionary/wording.md) plus [AI writing habits](dictionary/habits.md)
    when the agent writes prose. Apply the mandatory [quality scan](skill/QUALITY_SCAN.md)
    to every software task, including narrow changes and read-only work. If the agent
    cannot access this repository, include those references with the task.
-3. Include the target repository, latest user direction, relevant project instructions,
+4. Include the target repository, latest user direction, relevant project instructions,
    current branch/revision, upstream divergence, constraints, and actions already
    authorized. Before delegating or editing, create the complete path-level ownership
    ledger in [Changeset ownership](skill/CHANGESET_OWNERSHIP.md). Treat every
@@ -23,7 +30,7 @@ Compress provides separate instructions for common software tasks. It is a set o
    production usage data for an API audit. If data is missing, mark only the related
    claim as unknown and continue the product-value assessment from its purpose, working
    behavior, outputs, and other available evidence.
-4. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
+5. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 

@@ -21,6 +21,50 @@ relevant project instructions. Establish and keep in working context:
 - Actions already authorized, who authorized them, the exact target and environment,
   and any approval or human decision still required.
 
+Keep a compact goal card in the active task context:
+
+- The user's requested outcome, updated only when the user redirects it.
+- Observable evidence that would complete it.
+- The bounded scope and any explicit exclusions.
+- The fastest complete path and the next checkpoint.
+
+Keep the original request visible when working through a narrower subproblem. A
+subproblem is progress only when it is necessary to the acceptance evidence or the user
+has explicitly added it. Record related defects that are outside the goal for the final
+report instead of silently adopting them.
+
+## Catch drift and reassess the fastest path
+
+For a simple, bounded task, aim to finish in under five minutes. If its required checks,
+release path, or a real dependency make that impractical, produce the first concrete
+result within five minutes and keep the remaining work bounded. Never use the time target
+to skip required verification or an authorized release step.
+
+While work continues, reassess at least every five minutes of active work, and sooner
+after a user correction, a material discovery, a failed approach, a blocker, or a change
+in the planned scope. After any long-running tool operation returns, reassess before
+starting another operation. Do not start an unbounded wait or repeat a failed approach
+without a new hypothesis and a check that can distinguish it.
+
+At each reassessment, answer from the goal card:
+
+1. What is the user's current requested outcome and its completion evidence?
+2. Did the last work move that evidence closer, or was it an unrelated side path?
+3. What is the shortest safe path from the current state to completion?
+4. Can the task be completed now, or is one specific user decision or dependency
+   required?
+
+If work has drifted, stop the detour, preserve useful findings, and return to the shortest
+path that satisfies the user's request. Expand the goal only when the user asked for the
+broader work or the new finding is a confirmed cause or repetition on the same required
+product path. Do not turn a proportional quality scan into an open-ended audit.
+
+When a task continues past five minutes, send a concise user-facing checkpoint by that
+point: restate the goal, report only verified progress and concrete blockers, and name the
+fastest next step. If the reassessment changes direction, say so and continue on the
+corrected path. Avoid repetitive status messages that promise future work without new
+evidence.
+
 ### Record the repository baseline before work
 
 Use [Changeset ownership](CHANGESET_OWNERSHIP.md) as the required path-level ledger
