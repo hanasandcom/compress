@@ -28,7 +28,8 @@ give a worker broader permissions than the user or project granted.
    faster; balance the work so no agent becomes a needless bottleneck. Don't give one
    agent multiple unrelated products just because it is simpler to dispatch.
 4. Before dispatch, check shared APIs, schemas, design systems, data, deployment,
-   production state, and file ownership. Agree on shared contracts first. If one task
+   production state, and file ownership. Use [Changeset ownership](CHANGESET_OWNERSHIP.md)
+   to map existing and assigned paths. Agree on shared contracts first. If one task
    must settle an interface before another can start, dispatch the independent research
    or preparation first and sequence only the dependent implementation.
 

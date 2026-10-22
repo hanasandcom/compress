@@ -23,6 +23,11 @@ relevant project instructions. Establish and keep in working context:
 
 ### Record the repository baseline before work
 
+Use [Changeset ownership](CHANGESET_OWNERSHIP.md) as the required path-level ledger
+and reconciliation procedure whenever a repository is dirty, workers are delegated,
+or the integration branch is behind. Refresh it after each integrated ownership slice;
+the summary rules below establish the minimum baseline.
+
 For every repository that may be edited, record its branch, `HEAD`, configured
 remotes, upstream branch, and ahead/behind counts before delegating or changing
 files. Capture the complete staged, unstaged, and untracked path inventory and a

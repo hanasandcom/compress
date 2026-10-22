@@ -13,11 +13,11 @@ Compress provides separate instructions for common software tasks. It is a set o
    cannot access this repository, include those references with the task.
 3. Include the target repository, latest user direction, relevant project instructions,
    current branch/revision, upstream divergence, constraints, and actions already
-   authorized. Before delegating or editing, record staged, unstaged, and untracked paths;
-   treat every pre-existing change as protected work and assign it an owner. If the branch
-   is behind or dirty paths overlap incoming commits, compare and reconcile those changes
-   before moving refs. Check the actual workspace and sandbox limits before deciding the
-   repository is unavailable; follow [Session Control](skill/SESSION_CONTROL.md). Provide
+   authorized. Before delegating or editing, create the complete path-level ownership
+   ledger in [Changeset ownership](skill/CHANGESET_OWNERSHIP.md). Treat every
+   pre-existing change as protected work, isolate concurrent writers, and reconcile dirty
+   paths with incoming commits before moving refs. Check the actual workspace and sandbox
+   limits before deciding the repository is unavailable; follow [Session Control](skill/SESSION_CONTROL.md). Provide
    available evidence, such as
    production usage data for an API audit. If data is missing, mark only the related
    claim as unknown and continue the product-value assessment from its purpose, working
@@ -222,6 +222,7 @@ helped.
 - [Investigate](skill/INVESTIGATE.md) — answer a question and finish the directly related fixes it reveals.
 - [Parallelization](skill/PARALLELIZATION.md) — divide one coherent goal into independent work.
 - [Multitasking](skill/MULTITASKING.md) — assign separate requested outcomes to separate owners.
+- [Changeset ownership](skill/CHANGESET_OWNERSHIP.md) — inventory, assign, reconcile, and close dirty or stale work.
 - [Session Control](skill/SESSION_CONTROL.md) — keep the user in control across active work, decisions, and handoffs.
 - [Research](skill/RESEARCH.md) — choose, compare, and apply a useful set of papers.
 - [Quality scan](skill/QUALITY_SCAN.md) — check code, names, and README quality in
