@@ -53,6 +53,12 @@ keep coordination separate from implementation ownership. When an explicit user
 request broadens a task, update the goal card with the new scope and completion
 evidence before proceeding.
 
+Treat a worker's “understood,” “yes,” or plan as receipt of the correction, not proof
+of compliance. Check the subsequent actions, diff, verification, and live behavior
+against the correction. If the thread repeats the same out-of-scope action or has no
+concrete result by its checkpoint, state the observed mismatch and give one specific,
+goal-aligned next action; keep monitoring until evidence shows the course changed.
+
 ### Make progress visible every five minutes
 
 Every continuing task must produce a concrete result tied to its goal at least once
