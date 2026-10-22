@@ -81,6 +81,22 @@ verify all of the following independently:
 Record unresolved work as active, waiting, or blocked with its owner and next action.
 Do not report full completion while any required ledger row is unknown or incomplete.
 
+## Checkpoint every turn and session boundary
+
+Before ending a turn, handing work off, or switching to an unrelated scope, refresh
+the exact Git status and reconcile it against the ledger. Every remaining path must
+have one owner, a disposition, a recoverable snapshot or commit, and a concrete next
+action. Commit a verified coherent slice; if it is not ready to commit, preserve the
+complete patch and leave the task active with its path-level checkpoint. On resume,
+re-read the repository, remotes, divergence, and working tree instead of assuming the
+saved baseline is still current.
+
+When the integration branch is behind upstream and already has local changes, stop
+adding unrelated work to that stale checkout. Preserve its full state, establish a
+clean integration worktree from the intended upstream, and reconcile the owned
+changes there one slice at a time. Do not allow another task or turn to add paths to
+the stale checkout until its ownership ledger and snapshot are current.
+
 ## Research basis and limits
 
 Three complementary studies inform these controls. Dias, Borba, and Barreto analyzed
