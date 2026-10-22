@@ -28,6 +28,44 @@ Keep a compact goal card in the active task context:
 - The bounded scope and any explicit exclusions.
 - The fastest complete path and the next checkpoint.
 
+For ongoing or resumed work, reload the current [Compress README](../README.md),
+this session-control guide, and the selected task workflow from disk. Do this again
+after context compaction or a manager's request to refresh instructions; do not rely
+on remembered or copied workflow text. Re-read the conversation's original user
+request and every later correction, then refresh the goal card before taking more
+actions. A continuation such as “continue” does not erase the original goal.
+
+### Keep each thread on its own goal
+
+When managing or coordinating multiple threads, track each thread against its own
+original user request and explicit later corrections. A shared organization, product
+name, login page, or adjacent thread does not by itself create a shared dependency or
+authorize work in another product. Cross-thread work is in scope only when the user
+explicitly requested that coordination or direct evidence shows that the work is
+necessary to the thread's stated acceptance conditions. Confirm the actual shared
+code, API, data, release, or operational dependency before treating two surfaces as
+one path. If the user says there is no shared path, remove that work from scope.
+
+A manager message can set a checkpoint or correct scope; it does not replace the
+thread's original goal. Do not let a worker or neighboring thread silently broaden
+that goal. Ask a peer to do only work that directly unblocks the assigned goal, and
+keep coordination separate from implementation ownership. When an explicit user
+request broadens a task, update the goal card with the new scope and completion
+evidence before proceeding.
+
+### Make progress visible every five minutes
+
+Every continuing task must produce a concrete result tied to its goal at least once
+every five minutes of elapsed time, including time spent waiting or polling: a
+verified finding, changed artifact, completed check, or a precisely identified
+dependency blocker with the next safe action. A status message or plan by itself is
+not a result. Record the evidence and next step in the user-facing checkpoint. Do not
+let repeated polling or waiting on another thread consume the five-minute interval.
+After five minutes without new dependency evidence, stop polling; continue independent
+in-scope work or hand back the exact dependency and resume only when there is new
+evidence or direction. Reassess the original goal and fastest complete path before
+continuing.
+
 Keep the original request visible when working through a narrower subproblem. A
 subproblem is progress only when it is necessary to the acceptance evidence or the user
 has explicitly added it. Record related defects that are outside the goal for the final

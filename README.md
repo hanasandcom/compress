@@ -32,6 +32,12 @@ Compress provides separate instructions for common software tasks. It is a set o
    behavior, outputs, and other available evidence.
 5. Load another task workflow only if the task genuinely crosses into it. For a chain, carry one shared task brief and research note forward; do not load every workflow or repeat the same research.
 
+On every resume, continuation after context compaction, or manager instruction to
+refresh, reload this README, [Session Control](skill/SESSION_CONTROL.md), and the
+selected task workflow from the current files. Re-read the original request and its
+latest corrections before continuing; use the goal card to keep the work tied to that
+request.
+
 If the task type is unclear, describe the desired outcome first and choose the workflow that best matches it.
 
 When the user assigns ongoing responsibility for a project, or asks whether it is
