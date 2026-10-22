@@ -47,6 +47,17 @@ integration branch is current with its intended upstream, and no staged,
 unstaged, or untracked task files remain. A clean status on a stale base, or a
 current base with unexplained dirty files, is not completion.
 
+### Pin review targets when a checkout can change
+
+Before reviewing work in a shared or otherwise mutable checkout, record the exact
+base revision and review target. Prefer an immutable commit or isolated worktree; if
+the proposed change exists only as a patch, save the complete patch and record its
+checksum. Tie findings to that target. If `HEAD`, the worktree, or the patch changes
+during review, identify the change and refresh every affected finding against the
+pinned target before approving or integrating it. Do not combine observations from
+different revisions into one review or assume a prior review still covers the new
+tree.
+
 Inspect the actual execution environment before declaring a repository unavailable.
 Check the current checkout, permitted workspace roots, attached projects or worktrees,
 and repository connectors available to the task. A sandbox is a permission boundary,
