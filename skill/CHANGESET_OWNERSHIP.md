@@ -40,6 +40,25 @@ before integrating it. Keep integration serialized. Do not leave a broad batch o
 uncommitted edits accumulating across work sessions. A newly dirty path with no owner
 pauses edits that could conflict with it until the ledger is updated.
 
+## Stop dirty shared checkouts from accumulating work
+
+Treat a shared checkout with any pre-existing dirty paths as a preservation boundary,
+not as the default place to start the next task. First record its complete path list,
+branch, base, remotes, divergence, and recoverable snapshot. Do not add unrelated work
+or silently fold a new request into those changes. If the checkout is `main`, is behind
+its intended upstream, or has changes from more than one task, freeze writes there and
+continue in a clean task worktree based on the refreshed integration target. Bring
+changes forward only as individually owned, reviewed slices; keep the original checkout
+intact until every baseline path has a disposition.
+
+At each task or session boundary, compare `git status --porcelain=v1 -z` with the
+ledger. Every newly dirty path must be assigned before further edits. Checkpoint each
+verified coherent slice on its task branch before starting unrelated work; for an
+unfinished slice, preserve a patch or snapshot and name its owner, base, evidence, and
+next action. A rising dirty-path count, an unexplained path, or a branch that has fallen
+behind the intended upstream triggers reconciliation before more work is added. Do
+not use a clean status produced by discarding changes as evidence of recovery.
+
 ## Reconcile a dirty or stale branch
 
 Before merge, rebase, pull, cherry-pick, reset, or other ref movement:
