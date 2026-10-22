@@ -101,6 +101,14 @@ These are observational studies with different project samples and conflict
 definitions. They support early ownership, smaller checkpoints, and focused integration
 review; none proves that a ledger or isolated worktrees can prevent every conflict.
 
-- Dias, Borba, and Barreto, [Understanding predictive factors for merge conflicts](https://doi.org/10.1016/j.infsof.2020.106256), *Information and Software Technology* 121 (2020). [Full paper](https://pauloborba.cin.ufpe.br/publication/2020understanding_predictive_factors_for_merge_conflicts/2020ISTPredictiveFactorsForMergeConflicts.pdf).
-- Brindescu, Ahmed, Jensen, and Sarma, [An empirical investigation into merge conflicts and their effect on software quality](https://doi.org/10.1007/s10664-019-09735-4), *Empirical Software Engineering* (2020). [Full paper](https://ics.uci.edu/~iftekha/pdf/J4.pdf).
-- Vale, Fernandes, Figueiredo, and Apel, [Behind developer contributions on conflicting merge scenarios](https://doi.org/10.1109/SCAM59687.2023.00014), *IEEE SCAM* (2023). [Full paper](https://homepages.dcc.ufmg.br/~figueiredo/publications/scam2023preprint.pdf).
+- Dias, Borba, and Barreto, [Understanding predictive factors for merge conflicts][dias],
+  *Information and Software Technology* 121 (2020).
+- Brindescu, Ahmed, Jensen, and Sarma, [An empirical investigation into merge
+  conflicts and their effect on software quality][brindescu], *Empirical Software
+  Engineering* (2020).
+- Vale, Fernandes, Figueiredo, and Apel, [Behind developer contributions on conflicting
+  merge scenarios][vale], *IEEE SCAM* (2023).
+
+[dias]: https://doi.org/10.1016/j.infsof.2020.106256
+[brindescu]: https://doi.org/10.1007/s10664-019-09735-4
+[vale]: https://doi.org/10.1109/SCAM59687.2023.00014
