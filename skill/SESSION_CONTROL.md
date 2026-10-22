@@ -21,6 +21,32 @@ relevant project instructions. Establish and keep in working context:
 - Actions already authorized, who authorized them, the exact target and environment,
   and any approval or human decision still required.
 
+### Record the repository baseline before work
+
+For every repository that may be edited, record its branch, `HEAD`, configured
+remotes, upstream branch, and ahead/behind counts before delegating or changing
+files. Capture the complete staged, unstaged, and untracked path inventory and a
+diff summary. A status headline or remembered count is not enough. Treat all
+pre-existing changes as protected work; do not assume the current agent created
+them or may discard them.
+
+Assign an owner to each existing dirty path and its directly related tests,
+fixtures, generated-source inputs, and documentation. The coordinator owns any
+unassigned path until it has an owner. When the branch is behind, compare the
+dirty path inventory with incoming commits before merging, rebasing, pulling, or
+otherwise moving refs. Identify duplicate hunks, unique changes, and conflicts;
+preserve a recoverable snapshot before integration. Reconcile every owned path
+against the new base and verify the final diff. Never use reset, clean, checkout,
+or a blanket restore to make a tree look clean. If ownership or intended behavior
+cannot be established from the available evidence, preserve the changes and ask
+only about that specific decision.
+
+Refresh this baseline after integration and before release. “Clean main” requires
+separate proof that the requested changes are reviewed and committed, the
+integration branch is current with its intended upstream, and no staged,
+unstaged, or untracked task files remain. A clean status on a stale base, or a
+current base with unexplained dirty files, is not completion.
+
 Inspect the actual execution environment before declaring a repository unavailable.
 Check the current checkout, permitted workspace roots, attached projects or worktrees,
 and repository connectors available to the task. A sandbox is a permission boundary,

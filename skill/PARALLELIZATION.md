@@ -59,10 +59,24 @@ condition. See [Session Control](SESSION_CONTROL.md) for authority and live-stat
    or question, dependencies, interface contract, acceptance checks, and expected
    evidence. Ask agents to return early when they find a conflict or changed
    dependency; reassign the work before parallel edits collide.
+   Before work starts, maintain an ownership map for every pre-existing dirty path as
+   well as newly assigned files. Include directly related tests, fixtures, generated
+   inputs, and docs. No path may have two editing owners; the integrator owns unassigned
+   paths. If multiple workers must change a shared interface, name one interface owner
+   and have the others return scoped proposals against that contract.
 5. Start independent work promptly. Track owners and status in a small task list so the
    coordinator can see what is active, waiting, blocked, finished, or needs review.
    Do not create a new registry or status report when the app's task view already shows
    it.
+
+For a dirty or stale checkout, assign every existing change before asking workers to
+edit. Give workers the same recorded base revision and only their owned paths. Keep
+integration serialized through the named coordinator: compare each returned diff with
+the assigned baseline, integrate only that ownership slice, resolve overlaps against
+the incoming base, and record its checks before moving to the next slice. Do not let
+workers stage, commit, move refs, or publish from a shared checkout. Commit reviewed
+work in small, coherent checkpoints so unfinished batches do not accumulate as an
+unowned working tree.
 
 ## 3. Integrate and verify the whole result
 
