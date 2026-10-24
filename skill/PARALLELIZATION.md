@@ -1,9 +1,14 @@
 # Parallelization
 
-For Hanasand, use only `/Users/eirikhanasand/Desktop/personal/hanasand`. Do not create
-clones, task-named directories, temporary checkouts, or Git worktrees. Keep worker
-branches in that checkout and serialize writes; this repository-specific rule overrides
-the isolated-worktree recommendations below.
+For Hanasand, `/Users/eirikhanasand/Desktop/personal/hanasand` is the only persistent
+repository checkout. Do not create task-named directories, parallel clones, or Git
+worktrees for routine work. Keep worker branches in that checkout and serialize writes;
+this repository-specific rule overrides the isolated-worktree recommendations below.
+One recovery clone under `/private/tmp` is permitted only when the user explicitly
+directs safe recovery in another location. Preserve all original checkouts, task
+directories, and backups; integrate and push reviewed changes from the recovery clone,
+and retain it until every configured remote is verified. This exception does not
+authorize deleting or replacing original data.
 
 Use this workflow when one outcome can be delivered sooner by assigning independent
 parts of that outcome to multiple agents. The goal is shorter time to a correct,

@@ -6,13 +6,20 @@ the whole result; each pre-existing and newly created path has one accountable o
 
 ## Hanasand checkout rule
 
-For Hanasand, the only permitted repository directory and checkout is
-`/Users/eirikhanasand/Desktop/personal/hanasand`. Never create or use Hanasand clones,
-task-named repository directories, temporary checkouts, or Git worktrees. Use branches
-in the canonical checkout and serialize edits to shared files. When a worker is involved,
-assign its branch in that checkout and have it continue there after the current writer
-checkpoints; do not wait by opening another checkout. This rule overrides general
-worktree isolation guidance below for Hanasand.
+For Hanasand, `/Users/eirikhanasand/Desktop/personal/hanasand` is the only persistent
+repository checkout. Do not create or use task-named repository directories, parallel
+clones, or Git worktrees for routine work. Use branches in the canonical checkout and
+serialize edits to shared files. When a worker is involved, assign its branch in that
+checkout and have it continue there after the current writer checkpoints. This rule
+overrides general worktree isolation guidance below for Hanasand.
+
+If the user explicitly directs safe recovery in a separate location, one temporary
+recovery clone under `/private/tmp` is allowed. Preserve all original checkouts, task
+directories, and backups. Inventory and review source changes before integrating them;
+commit and push the intended changes from the recovery clone, verify each configured
+remote, and retain the recovery clone until that verification is complete. This
+exception does not authorize replacing or deleting original data; cleanup requires
+separate authorization.
 
 ## Establish the ledger before edits
 

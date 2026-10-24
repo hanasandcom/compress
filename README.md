@@ -4,12 +4,17 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 ## How to use it
 
-For Hanasand, use only `/Users/eirikhanasand/Desktop/personal/hanasand` as the
-repository directory and checkout. Do not create or use another clone, task-named
-directory, temporary checkout, or Git worktree for Hanasand. Keep work on branches in
-that checkout and serialize writes to its shared files; do not create parallel
-checkouts to support concurrent workers. If a change needs isolation, use a branch in
-the canonical checkout and pause overlapping edits until the active writer checkpoints.
+For Hanasand, use `/Users/eirikhanasand/Desktop/personal/hanasand` as the only
+persistent repository directory and checkout. Do not create or use task-named
+directories, parallel clones, or Git worktrees for routine work. Keep branches in the
+canonical checkout and serialize writes to shared files. A single recovery clone under
+`/private/tmp` is allowed only when the user explicitly directs safe recovery in a
+separate location (for example, because the canonical checkout's Git metadata is
+broken). In that case, preserve every original checkout, task directory, and backup;
+record and review the source changes, then integrate, commit, and push the intended
+changes from the recovery clone. Retain the recovery clone until commits and pushes are
+verified on every configured remote. Do not treat this exception as permission to
+delete or replace any original directory or backup.
 
 1. State the requested outcome, observable completion evidence, and the fastest
    complete path before starting. Keep a simple, bounded task under five minutes
