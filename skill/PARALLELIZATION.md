@@ -1,5 +1,10 @@
 # Parallelization
 
+For Hanasand, use only `/Users/eirikhanasand/Desktop/personal/hanasand`. Do not create
+clones, task-named directories, temporary checkouts, or Git worktrees. Keep worker
+branches in that checkout and serialize writes; this repository-specific rule overrides
+the isolated-worktree recommendations below.
+
 Use this workflow when one outcome can be delivered sooner by assigning independent
 parts of that outcome to multiple agents. The goal is shorter time to a correct,
 integrated result, not fewer agents. When there is enough independent work, use the

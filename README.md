@@ -4,6 +4,13 @@ Compress provides separate instructions for common software tasks. It is a set o
 
 ## How to use it
 
+For Hanasand, use only `/Users/eirikhanasand/Desktop/personal/hanasand` as the
+repository directory and checkout. Do not create or use another clone, task-named
+directory, temporary checkout, or Git worktree for Hanasand. Keep work on branches in
+that checkout and serialize writes to its shared files; do not create parallel
+checkouts to support concurrent workers. If a change needs isolation, use a branch in
+the canonical checkout and pause overlapping edits until the active writer checkpoints.
+
 1. State the requested outcome, observable completion evidence, and the fastest
    complete path before starting. Keep a simple, bounded task under five minutes
    when practical. If the required release path or a real blocker makes that

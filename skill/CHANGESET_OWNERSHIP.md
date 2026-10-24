@@ -4,6 +4,16 @@ Use this guide whenever a repository is dirty, multiple workers contribute, or t
 integration branch is behind its upstream. The coordinator remains responsible for
 the whole result; each pre-existing and newly created path has one accountable owner.
 
+## Hanasand checkout rule
+
+For Hanasand, the only permitted repository directory and checkout is
+`/Users/eirikhanasand/Desktop/personal/hanasand`. Never create or use Hanasand clones,
+task-named repository directories, temporary checkouts, or Git worktrees. Use branches
+in the canonical checkout and serialize edits to shared files. When a worker is involved,
+assign its branch in that checkout and have it continue there after the current writer
+checkpoints; do not wait by opening another checkout. This rule overrides general
+worktree isolation guidance below for Hanasand.
+
 ## Establish the ledger before edits
 
 Record the repository root, branch, `HEAD`, upstream, remotes, ahead/behind counts,
